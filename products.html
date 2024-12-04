@@ -17,7 +17,7 @@
         }
         .products {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
             margin-top: 20px;
         }
@@ -31,8 +31,25 @@
         .product img {
             max-width: 100%;
             height: auto;
+            margin-bottom: 15px;
         }
-            footer {
+        .product h3 {
+            color: #333;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .product p, .product ul {
+            font-size: 0.9em;
+            text-align: left;
+        }
+        .product ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .product ul li {
+            margin-bottom: 5px;
+        }
+        footer {
             margin-top: 20px;
             padding: 20px;
             background: #333;
@@ -70,107 +87,75 @@
         </div>
         <div class="product">
             <h3>HAAS DS-30SS – 2016</h3>
-            <p>Haas DS30SS CNC Lathe with SubSpindle</p>
+            <p>Haas DS30SS CNC Lathe with SubSpindle, featuring the following specifications:</p>
             <ul>
-                <li><strong>SWING DIAMETER:</strong></li>
-                <ul>
-                    <li>Over Front Apron: 31.75″</li>
-                    <li>Over Cross Slide: 20.75″</li>
-                    <li>Over Second Spindle: 21.75″</li>
-                </ul>
-                <li><strong>CAPACITIES:</strong></li>
-                <ul>
-                    <li>Max Cutting Diameter: 16.0″</li>
-                    <li>Max Cutting Length: 23″</li>
-                    <li>Bar Capacity: 2.0”</li>
-                </ul>
-                <li><strong>TRAVELS & FEEDRATES:</strong></li>
-                <ul>
-                    <li>X Axis: 12.5″</li>
-                    <li>Z Axis: 23″</li>
-                    <li>Rapids on X: 472 IPM</li>
-                    <li>Rapids on Z: 1200 IPM</li>
-                </ul>
-                <li><strong>SPINDLE:</strong></li>
-                <ul>
-                    <li>Max Rating: 30 hp</li>
-                    <li>Max Speed: 4800 RPM</li>
-                    <li>Max Torque: 275 ft-lb @ 600 rpm</li>
-                    <li>Spindle Nose: A2-6</li>
-                    <li>Spindle Bore: 3.50″</li>
-                </ul>
-                <li><strong>SECONDARY SPINDLE:</strong></li>
-                <ul>
-                    <li>Max Rating: 20 hp</li>
-                    <li>Max Speed: 4800 rpm</li>
-                    <li>Max Torque: 110 ft-lb @ 700 rpm</li>
-                    <li>Spindle Nose: A2-5</li>
-                    <li>Max Cutting Diameter: 18″</li>
-                    <li>Max Cutting Length: 23″</li>
-                    <li>Spindle Bore: 2.44″</li>
-                </ul>
-                <li><strong>TURRET:</strong></li>
-                <ul>
-                    <li>Number of Tools: 12</li>
-                </ul>
-                <li><strong>GENERAL:</strong></li>
-                <ul>
-                    <li>Machine Weight: 14600 lb</li>
-                    <li>Equipped With:</li>
+                <li><strong>Swing Diameter:</strong>
                     <ul>
-                        <li>Haas CNC Control</li>
-                        <li>Parts Catcher</li>
-                        <li>Tool Presetter</li>
-                        <li>Chip Conveyor</li>
-                        <li>16″ x 26″ (406 x 660 mm) max capacity</li>
-                        <li>31.75″ (806 mm) swing</li>
-                        <li>Main Spindle: 30 hp (22.4 kW) vector drive, 4800 rpm, A2-6 spindle, 8.3″ (210 mm) chuck.</li>
-                        <li>Secondary Spindle: 20 hp (14.9 kW) vector drive, 4800 rpm, A2-5 spindle, 8.3″ (210 mm) chuck.</li>
-                        <li>24-station hybrid turret 12 VDI</li>
-                        <li>Rigid tapping</li>
-                        <li>Royal QG80 collet nose on sub spindle</li>
-                        <li>Tool blocks pictured are included (no tools)</li>
-                        <li>4-foot Haas bar feeder included</li>
-                        <li>Various spindle liners included</li>
-                        <li>1000 PSI Through turret coolant</li>
-                        <li>Oil skimmer</li>
-                        <li>**NO Milling</li>
+                        <li>Over Front Apron: 31.75″</li>
+                        <li>Over Cross Slide: 20.75″</li>
+                        <li>Over Second Spindle: 21.75″</li>
                     </ul>
-                </ul>
+                </li>
+                <li><strong>Capacities:</strong>
+                    <ul>
+                        <li>Max Cutting Diameter: 16.0″</li>
+                        <li>Max Cutting Length: 23″</li>
+                        <li>Bar Capacity: 2.0”</li>
+                    </ul>
+                </li>
+                <li><strong>Travels & Feedrates:</strong>
+                    <ul>
+                        <li>X Axis: 12.5″</li>
+                        <li>Z Axis: 23″</li>
+                        <li>Rapids on X: 472 IPM</li>
+                        <li>Rapids on Z: 1200 IPM</li>
+                    </ul>
+                </li>
+                <li><strong>Spindle:</strong>
+                    <ul>
+                        <li>Max Rating: 30 hp</li>
+                        <li>Max Speed: 4800 RPM</li>
+                        <li>Max Torque: 275 ft-lb @ 600 rpm</li>
+                        <li>Spindle Nose: A2-6</li>
+                        <li>Spindle Bore: 3.50″</li>
+                    </ul>
+                </li>
+                <li><strong>Secondary Spindle:</strong>
+                    <ul>
+                        <li>Max Rating: 20 hp</li>
+                        <li>Max Speed: 4800 rpm</li>
+                        <li>Max Torque: 110 ft-lb @ 700 rpm</li>
+                        <li>Spindle Nose: A2-5</li>
+                        <li>Max Cutting Diameter: 18″</li>
+                        <li>Max Cutting Length: 23″</li>
+                        <li>Spindle Bore: 2.44″</li>
+                    </ul>
+                </li>
+                <li><strong>General Features:</strong>
+                    <ul>
+                        <li>Machine Weight: 14600 lb</li>
+                        <li>Equipped with Haas CNC Control, Parts Catcher, Tool Presetter, Chip Conveyor, and more.</li>
+                    </ul>
+                </li>
             </ul>
         </div>
         <div class="product">
             <h3>MAKINO A51NX – 2016</h3>
-            <p>Makino A51NX CNC Horizontal Machining Center</p>
+            <p>Makino A51NX CNC Horizontal Machining Center with the following specifications:</p>
             <ul>
-                <li><strong>Pallet Size (Metric Type):</strong> 15.7″ x 15.7″</li>
-                <li><strong>Axis Travel:</strong></li>
-                <ul>
-                    <li>X, Column Longitudinal: 22″</li>
-                    <li>Y, Spindle Vertical: 25.2″</li>
-                    <li>Z, Table Cross: 25.2″</li>
-                </ul>
-                <li><strong>Spindle Center to Top of Pallet:</strong> 3.1″ – 28.3″</li>
-                <li><strong>Spindle Nose to Center of Pallet:</strong> 3.9″ – 29.1″</li>
-                <li><strong>Spindle Drive Motor (Continuous):</strong> AC 30 HP AC / 50 HP Duty Rated</li>
-                <li><strong>Spindle Speed (High Power Spindle – std):</strong> 50 to 14,000 RPM</li>
+                <li><strong>Pallet Size:</strong> 15.7″ x 15.7″</li>
+                <li><strong>Axis Travel:</strong>
+                    <ul>
+                        <li>X, Column Longitudinal: 22″</li>
+                        <li>Y, Spindle Vertical: 25.2″</li>
+                        <li>Z, Table Cross: 25.2″</li>
+                    </ul>
+                </li>
+                <li><strong>Spindle Drive Motor:</strong> 30 HP AC / 50 HP Duty Rated</li>
+                <li><strong>Spindle Speed:</strong> 50 to 14,000 RPM</li>
                 <li><strong>Rapid Traverse / Feedrate XYZ:</strong> 2,360 ipm / 1968 IPM</li>
-                <li><strong>Spindle:</strong> CAT40 Taper</li>
-                <li><strong>ATC Capacity:</strong> 60 ATC</li>
-                <li><strong>Tool to Tool:</strong> .9 sec</li>
-                <li><strong>Chip to Chip:</strong> 2.2 sec</li>
-                <li><strong>Max Tool Length:</strong> 16.9”</li>
-                <li><strong>Max Tool Diameter:</strong> 6.7”</li>
-                <li><strong>Max Tool Weight:</strong> 26.4 lbs</li>
-                <li><strong>Floor Space (W x D) w/o Accessories:</strong> 106.3″ x 166.8″</li>
-                <li><strong>Weight with ATC 60:</strong> 19,620 lbs</li>
-                <li><strong>Equipped With:</strong></li>
-                <ul>
-                    <li>Pro 6 CNC Control</li>
-                    <li>Pallet Changer</li>
-                    <li>Chip Conveyor</li>
-                    <li>Through Spindle Coolant</li>
-                </ul>
+                <li><strong>ATC Capacity:</strong> 60 tools</li>
+                <li><strong>Equipped with:</strong> Pro 6 CNC Control, Pallet Changer, Chip Conveyor, Through Spindle Coolant.</li>
             </ul>
         </div>
     </div>
