@@ -8,8 +8,15 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex: 1;
+            padding: 20px;
         }
         h1 {
             text-align: center;
@@ -23,10 +30,12 @@
         }
         footer {
             text-align: center;
-            margin-top: 20px;
             padding: 10px;
             background-color: #333;
             color: white;
+            position: sticky;
+            bottom: 0;
+            width: 100%;
         }
         .return-home {
             position: fixed;
@@ -37,8 +46,9 @@
             color: white;
             border: none;
             border-radius: 5px;
-            cursor: pointer;
+            text-decoration: none;
             font-size: 14px;
+            text-align: center;
         }
         .return-home:hover {
             background-color: #0056b3;
@@ -46,16 +56,38 @@
     </style>
 </head>
 <body>
-    <h1>About Us</h1>
-    <p>Established in 1996, CDMglobal has been a trusted leader in the second-hand machinery business for over two decades. With offices in Chicago, Illinois, Lima, Peru, New Delhi, India, and Ahmedabad, Gujarat, we proudly serve clients across the globe.</p>
-    <p>We specialize in high-quality metalworking machinery, including CNC machines, EDMs, lathes, and a variety of other industrial equipment. Our mission is to provide reliable, cost-effective solutions for businesses of all sizes.</p>
+    <main>
+        <h1>About Us</h1>
+        <p>Hi, I'm Chirag Chaudhari, the founder and leader of CDMglobal. With a solid background in business analysis and data intelligence, I have over two decades of experience in the second-hand machinery industry. My passion for optimizing production processes and making high-quality equipment accessible to businesses worldwide has driven CDMglobal's success.</p>
+        <h2>My Vision</h2>
+        <p>Delivering cost-effective solutions to industries worldwide.</p>
+        <p>Ensuring reliability and high performance in all machinery offerings.</p>
+        <p>Supporting clients in enhancing their operational efficiency and scaling their businesses.</p>
+        <h2>Key Skills</h2>
+        <ul>
+            <li>Expertise in metalworking machinery (CNC machines, EDMs, lathes).</li>
+            <li>Deep knowledge of industrial equipment standards.</li>
+            <li>Strong leadership in global trade and customer relationship management.</li>
+        </ul>
+        <h2>About CDMglobal</h2>
+        <p>Established in 1996, CDMglobal is a trusted name in the second-hand machinery industry. With offices in:</p>
+        <ul>
+            <li>Chicago, Illinois, USA</li>
+            <li>Lima, Peru</li>
+            <li>New Delhi, India</li>
+            <li>Ahmedabad, Gujarat, India</li>
+        </ul>
+        <p>We serve a global clientele, specializing in inspected, high-performance machinery for industries of all sizes.</p>
+        <h2>Mission Statement</h2>
+        <p>To provide affordable, reliable, and high-quality machinery, empowering businesses to innovate and grow.</p>
+    </main>
     
     <footer>
         <p>&copy; <span id="currentYear"></span> CDMglobal. All rights reserved.</p>
         <p>Last updated: <span id="currentDateTime"></span></p>
     </footer>
 
-    <button class="return-home" onclick="returnHome()">Return Home</button>
+    <a href="index.html" class="return-home">Return Home</a>
 
     <script>
         // Set current year
@@ -65,11 +97,6 @@
         // Set current date and time
         const currentDateTime = new Date().toLocaleString();
         document.getElementById('currentDateTime').textContent = currentDateTime;
-
-        // Function to return to home page
-        function returnHome() {
-            window.location.href = '/'; // Adjust this URL as needed for your site
-        }
     </script>
 </body>
 </html>
