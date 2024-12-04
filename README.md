@@ -1,3 +1,5 @@
+https://cubs4148.github.io/machinery-business/
+
 CDMglobal
 
 Welcome to CDMglobal's repository! This repository hosts the HTML, CSS, and JavaScript code for the official website of CDMglobal, a leading provider of high-quality second-hand machinery.
