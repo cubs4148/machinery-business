@@ -3,244 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CDMglobal</title>
+    <title>CDMglobal - Home</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0 0 50px; /* Added padding-bottom to ensure footer does not overlap content */
+            padding: 0;
+            text-align: center;
             background-color: #f4f4f4;
         }
-        header {
-            background: #333;
-            color: #fff;
-            padding: 10px 20px;
-            text-align: center;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background: #444;
-        }
-        nav a {
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-        }
-        nav a:hover {
-            background: #555;
-        }
-        .container {
-            padding: 20px;
-        }
         .hero {
-            text-align: center;
-            padding: 50px;
-            background: url('https://cdn.example.com/optimized-hero-image.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #333;
             color: white;
         }
-        .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
-            gap: 20px;
-            margin-top: 20px;
+        .hero h1 {
+            font-size: 3rem;
         }
-        @media (max-width: 400px) {
-            .products {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            }
+        .buttons {
+            margin-top: 30px;
         }
-        .product {
-            background: white;
-            padding: 20px;
-            border: 1px solid #ddd;
+        .buttons a {
+            text-decoration: none;
+            color: white;
+            background: #444;
+            padding: 10px 20px;
+            margin: 10px;
             border-radius: 5px;
-            text-align: center;
+            display: inline-block;
         }
-        footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-            z-index: 10; /* Added z-index to ensure footer does not overlap content */
+        .buttons a:hover {
+            background: #555;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>CDMglobal</h1>
-        <p>High-Quality Second-Hand Machinery</p>
-    </header>
-
-    <nav>
-        <a href="home.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="about.html">About Us</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-
     <div class="hero">
-        <h2 style="color: black;">Find Reliable Machinery at the Best Prices</h2>
-        <p style="color: black;">Explore our wide range of second-hand machinery for all industries.</p>
-    </div>
-
-    <div class="container" id="products">
-        <h2>Our Products</h2>
-        <div class="products">
-            <div class="product">
-                <h3>Charmilles Robofil 440CC - 4 Axis Wire EDM</h3>
-                <img src="https://upload.example.com/Screenshot-2024-12-04-at-12.22.21-AM.png" alt="Charmilles Robofil 440CC" style="width:100%; height:auto;">
-                <table style="width:100%; border-collapse: collapse; margin: 20px 0;">
-                    <tr>
-                        <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Feature</th>
-                        <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Specification</th>
-                    </tr>
-                    <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Type of Machining</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Submerged wire cutting</td>
-                    </tr>
-                    <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Dimensions of Complete Equipment</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">102.36 x 110.63 x 88.19 in.</td>
-                    </tr>
-                    <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Total Weight of Equipment</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">7275 lbs. (without dielectric)</td>
-                    </tr>
-                    <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Max. Workpiece Dimensions</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">47.24 x 27.56 x 15.75 in.</td>
-                    </tr>
-                    <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Front Door Dimensions</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">40.16 in.</td>
-                    </tr>
-                    <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Max. Workpiece Weight</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">3307 lbs.</td>
-                    </tr>
-                    <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Dimensions of Table</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">35.43 x 23.62 in.</td>
-                    </tr>
-                    <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Floor-to-Table Distance</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">35.43 in.</td>
-                    </tr>
-                    <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Total Volume of Dielectric</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">317 gal.</td>
-                    </tr>
-                    <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;">X, Y, Z Travel</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">21.65 x 13.77 x 15.75 in.</td>
-                    </tr>
-                    <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;">U, V Travel</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">21.65 x 13.77 in.</td>
-                    </tr>
-                    <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Anti-Collision Protection</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Standard on 5 axes</td>
-                    </tr>
-                    <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Max. Taper</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">± 45°/15.75 in. (± 30°/15.75 in. standard)</td>
-                    </tr>
-                </table>
-                <p><strong>X, Y, Z and U, V Axes:</strong></p>
-                <ul>
-                    <li><strong>X, Y, Z Travel:</strong> 21.65 x 13.77 x 15.75 in.</li>
-                    <li><strong>U, V Travel:</strong> 21.65 x 13.77 in.</li>
-                    <li><strong>Anti-Collision Protection:</strong> Standard on 5 axes</li>
-                </ul>
-                <p><strong>Taper Machining:</strong></p>
-                <ul>
-                    <li><strong>Max. Taper:</strong> ± 45°/15.75 in. (± 30°/15.75 in. standard)</li>
-                </ul>
-            </div>
-            <div class="product">
-                <h3>Chicago</h3>
-                <p>Description of Machine B</p>
-                <p><strong>Price:</strong> $3,200</p>
-            </div>
-            <div class="product">
-                <h3>Ahmedabad</h3>
-                <p>Description of Machine C</p>
-                <p><strong>Price:</strong> $7,800</p>
-            </div>
+        <h1>Welcome to CDMglobal</h1>
+        <p>Your trusted partner for second-hand machinery.</p>
+        <div class="buttons">
+            <a href="products.html">Products</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
         </div>
     </div>
-
-    <div class="container" id="about">
-        <h2>About Us</h2>
-        <p>Established in 1996, CDMglobal has been a trusted leader in the second-hand machinery business for over two decades. With offices in Chicago, Illinois, Lima, Peru, New Delhi, India, and Ahmedabad, Gujarat, we proudly serve clients across the globe.</p>
-        <p>We specialize in high-quality metalworking machinery, including CNC machines, EDMs, lathes, and a variety of other industrial equipment. Our mission is to provide reliable, cost-effective solutions for businesses of all sizes, from small workshops to large-scale manufacturing units. Each machine we offer is thoroughly inspected and meets stringent industry standards to ensure maximum performance and longevity.</p>
-        <p>With our deep expertise and commitment to excellence, we aim to help our clients enhance their production capabilities and achieve operational efficiency. Whether you're upgrading your existing equipment or starting a new venture, we are your go-to partner for premium second-hand machinery.</p>
-        <p>Led by Chirag Chaudhari, a professional with a strong background in business analysis and data intelligence, our team is dedicated to delivering unparalleled customer service and tailored solutions. Feel free to contact us at <a href="mailto:c.chirag@icloud.com">c.chirag@icloud.com</a> to learn more about our offerings or to discuss your specific requirements.</p>
-    </div>
-
-    <div class="container" id="contact">
-        <h2>Contact Us</h2>
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start;">
-            <div style="flex: 1; min-width: 300px; margin-right: 20px;">
-                <form>
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your name" required style="width: 100%; padding: 10px; margin: 10px 0;">
-
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required style="width: 100%; padding: 10px; margin: 10px 0;">
-
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="4" placeholder="Enter your message" required style="width: 100%; padding: 10px; margin: 10px 0;"></textarea>
-
-                    <button type="submit" onclick="sendEmail(event)" style="background-color: #333; color: white; padding: 10px 20px; border: none; cursor: pointer;">Submit</button>
-                </form>
-            </div>
-            <div style="flex: 1; min-width: 300px;">
-                <h3>Our Address</h3>
-                <p>6301 N Sheridan Rd<br>Chicago, IL, 60660</p>
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.396710930933!2d-87.65679888454314!3d41.998183479212105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd0a3e9df4ad9%3A0xdbb5c42dd177fb3e!2s6301%20N%20Sheridan%20Rd%2C%20Chicago%2C%20IL%2060660%2C%20USA!5e0!3m2!1sen!2sin!4v1701028123456!5m2!1sen!2sin" 
-                    width="100%" 
-                    height="300" 
-                    style="border: 0; margin-top: 10px;" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2024 CDMglobal. All rights reserved.</p>
-        <p>Today's Date: <span id="current-date"></span>, Current Time: <span id="current-time"></span></p>
-    </footer>
-<script>
-        document.getElementById('current-date').textContent = new Date().toLocaleDateString();
-    </script>
-    <script>
-        document.getElementById('current-date').textContent = new Date().toLocaleDateString();
-        function updateTime() {
-            document.getElementById('current-time').textContent = new Date().toLocaleTimeString();
-        }
-        setInterval(updateTime, 1000);
-        function sendEmail(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            if (name && email && message) {
-                alert(`Thank you, ${name}! Your message has been sent.`);
-                // Code to send the email can be integrated here
-            } else {
-                alert('Please fill out all fields before submitting.');
-            }
-        }
-    </script>
-    </body>
+</body>
 </html>
