@@ -92,7 +92,7 @@
         <div class="products">
             <div class="product">
                 <h3>Charmilles Robofil 440CC - 4 Axis Wire EDM</h3>
-                <img src=/Users/chiragchaudhari/Desktop/Screenshot 2024-12-04 at 12.22.21 AM.png" alt="Charmilles Robofil 440CC" style="width:100%; height:auto;">
+                <img src="https://upload.example.com/Screenshot-2024-12-04-at-12.22.21-AM.png" alt="Charmilles Robofil 440CC" style="width:100%; height:auto;">
                 <table style="width:100%; border-collapse: collapse; margin: 20px 0;">
                     <tr>
                         <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Feature</th>
@@ -185,18 +185,35 @@
 
     <div class="container" id="contact">
         <h2>Contact Us</h2>
-        <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required><br><br>
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start;">
+            <div style="flex: 1; min-width: 300px; margin-right: 20px;">
+                <form>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required style="width: 100%; padding: 10px; margin: 10px 0;">
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br><br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required style="width: 100%; padding: 10px; margin: 10px 0;">
 
-            <label for="message">Message:</label><br>
-            <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Enter your message" required style="width: 100%; padding: 10px; margin: 10px 0;"></textarea>
 
-            <button type="submit" onclick="sendEmail(event)">Submit</button>
-        </form>
+                    <button type="submit" onclick="sendEmail(event)" style="background-color: #333; color: white; padding: 10px 20px; border: none; cursor: pointer;">Submit</button>
+                </form>
+            </div>
+            <div style="flex: 1; min-width: 300px;">
+                <h3>Our Address</h3>
+                <p>6301 N Sheridan Rd<br>Chicago, IL, 60660</p>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.396710930933!2d-87.65679888454314!3d41.998183479212105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd0a3e9df4ad9%3A0xdbb5c42dd177fb3e!2s6301%20N%20Sheridan%20Rd%2C%20Chicago%2C%20IL%2060660%2C%20USA!5e0!3m2!1sen!2sin!4v1701028123456!5m2!1sen!2sin" 
+                    width="100%" 
+                    height="300" 
+                    style="border: 0; margin-top: 10px;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
     </div>
 
     <footer>
