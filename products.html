@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CDMglobal - Products</title>
+    <title>CDMglobal - Contact</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,41 +15,119 @@
             text-align: center;
             color: #333;
         }
-        .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
-            gap: 20px;
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
             margin-top: 20px;
         }
-        .product {
-            background: white;
-            padding: 20px;
+        .form-container {
+            flex: 1;
+            min-width: 300px;
+            margin-right: 20px;
+        }
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-container label {
+            margin: 10px 0 5px;
+            color: #555;
+        }
+        .form-container input,
+        .form-container textarea {
+            padding: 10px;
+            margin-bottom: 10px;
             border: 1px solid #ddd;
             border-radius: 5px;
-            text-align: center;
+            width: 100%;
         }
-        .product img {
-            max-width: 100%;
-            height: auto;
+        .form-container button {
+            background: #333;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background: #555;
+        }
+        .map-container {
+            flex: 1;
+            min-width: 300px;
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+        footer {
+            margin-top: 20px;
+            padding: 20px;
+            background: #333;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        footer p {
+            margin: 5px 0;
+        }
+        .return-home {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #333;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .return-home:hover {
+            background: #555;
         }
     </style>
 </head>
 <body>
-    <h1>Our Products</h1>
-    <div class="products">
-        <div class="product">
-            <h3>Charmilles Robofil 440CC - 4 Axis Wire EDM</h3>
-            <img src="https://upload.example.com/Screenshot-2024-12-04-at-12.22.21-AM.png" alt="Charmilles Robofil 440CC">
-            <p>High-performance wire EDM for precision engineering.</p>
+    <h1>Contact Us</h1>
+    <div class="contact-container">
+        <div class="form-container">
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Enter your message" rows="4" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
         </div>
-        <div class="product">
-            <h3>Chicago</h3>
-            <p>Reliable and robust machine for heavy-duty tasks.</p>
-        </div>
-        <div class="product">
-            <h3>Ahmedabad</h3>
-            <p>Efficient and affordable solution for your production needs.</p>
+        <div class="map-container">
+            <h3>Our Address</h3>
+            <p>6301 N Sheridan Rd<br>Chicago, IL, 60660</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.396710930933!2d-87.65679888454314!3d41.998183479212105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd0a3e9df4ad9%3A0xdbb5c42dd177fb3e!2s6301%20N%20Sheridan%20Rd%2C%20Chicago%2C%20IL%2060660%2C%20USA!5e0!3m2!1sen!2sin!4v1701028123456!5m2!1sen!2sin"></iframe>
         </div>
     </div>
+
+    <footer>
+        <p>&copy; 2024 CDMglobal. All rights reserved.</p>
+        <p id="date-time">Today's Date: </p>
+        <p>6301 N Sheridan Rd, Chicago, IL, 60660</p>
+    </footer>
+
+    <a href="home.html" class="return-home">Return to Home</a>
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const dateTime = `${now.toLocaleDateString()} ${now.toLocaleTimeString()}`;
+            document.getElementById('date-time').textContent = `Today's Date: ${dateTime}`;
+        }
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+    </script>
 </body>
 </html>
