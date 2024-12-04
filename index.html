@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Machinery Business</title>
+    <title>CDMglobal</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -71,13 +71,14 @@
 </head>
 <body>
     <header>
-        <h1>Your Machinery Business</h1>
+        <h1>CDMglobal</h1>
         <p>High-Quality Second-Hand Machinery</p>
     </header>
 
     <nav>
         <a href="/">Home</a>
         <a href="#products">Products</a>
+        <a href="#about">About Us</a>
         <a href="#contact">Contact</a>
     </nav>
 
@@ -107,6 +108,14 @@
         </div>
     </div>
 
+    <div class="container" id="about">
+        <h2>About Us</h2>
+        <p>Established in 1996, CDMglobal has been a trusted leader in the second-hand machinery business for over two decades. With offices in Chicago, Illinois, Lima, Peru, New Delhi, India, and Ahmedabad, Gujarat, we proudly serve clients across the globe.</p>
+        <p>We specialize in high-quality metalworking machinery, including CNC machines, EDMs, lathes, and a variety of other industrial equipment. Our mission is to provide reliable, cost-effective solutions for businesses of all sizes, from small workshops to large-scale manufacturing units. Each machine we offer is thoroughly inspected and meets stringent industry standards to ensure maximum performance and longevity.</p>
+        <p>With our deep expertise and commitment to excellence, we aim to help our clients enhance their production capabilities and achieve operational efficiency. Whether you're upgrading your existing equipment or starting a new venture, we are your go-to partner for premium second-hand machinery.</p>
+        <p>Led by Chirag Chaudhari, a professional with a strong background in business analysis and data intelligence, our team is dedicated to delivering unparalleled customer service and tailored solutions. Feel free to contact us at <a href="mailto:c.chirag@icloud.com">c.chirag@icloud.com</a> to learn more about our offerings or to discuss your specific requirements.</p>
+    </div>
+
     <div class="container" id="contact">
         <h2>Contact Us</h2>
         <form>
@@ -119,12 +128,16 @@
             <label for="message">Message:</label><br>
             <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
 
-            <button type="submit" onclick="this.disabled=true; this.textContent='Submitting...';">Submit</button>
+            <button type="submit" onclick="this.disabled=true; this.textContent='Submitting...'; setTimeout(() => { this.disabled = false; this.textContent = 'Submit'; alert('Form submission failed. Please try again.'); }, 5000);">Submit</button>
         </form>
     </div>
 
     <footer>
-        <p>&copy; 2024 Your Machinery Business. All rights reserved.</p>
+        <p>&copy; 2024 CDMglobal. All rights reserved.</p>
+        <p>Today's Date: <span id="current-date"></span></p>
     </footer>
-</body>
+<script>
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString();
+    </script>
+    </body>
 </html>
