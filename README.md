@@ -43,6 +43,7 @@ Contact Me
 Feel free to reach out for collaborations, inquiries, or support:
 
 Email: c.chirag@icloud.com
+
 GitHub: github.com/cubs4148
 Contribution
 
