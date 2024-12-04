@@ -76,7 +76,7 @@
     </header>
 
     <nav>
-        <a href="/">Home</a>
+        <a href="#about">Home</a>
         <a href="#products">Products</a>
         <a href="#about">About Us</a>
         <a href="#contact">Contact</a>
@@ -149,16 +149,35 @@
             <label for="message">Message:</label><br>
             <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
 
-            <button type="submit" onclick="this.disabled=true; this.textContent='Submitting...'; setTimeout(() => { this.disabled = false; this.textContent = 'Submit'; alert('Form submission failed. Please try again.'); }, 5000);">Submit</button>
+            <button type="submit" onclick="sendEmail(event)">Submit</button>
         </form>
     </div>
 
     <footer>
         <p>&copy; 2024 CDMglobal. All rights reserved.</p>
-        <p>Today's Date: <span id="current-date"></span></p>
+        <p>Today's Date: <span id="current-date"></span>, Current Time: <span id="current-time"></span></p>
     </footer>
 <script>
         document.getElementById('current-date').textContent = new Date().toLocaleDateString();
+    </script>
+    <script>
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString();
+        function updateTime() {
+            document.getElementById('current-time').textContent = new Date().toLocaleTimeString();
+        }
+        setInterval(updateTime, 1000);
+        function sendEmail(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            if (name && email && message) {
+                alert(`Thank you, ${name}! Your message has been sent.`);
+                // Code to send the email can be integrated here
+            } else {
+                alert('Please fill out all fields before submitting.');
+            }
+        }
     </script>
     </body>
 </html>
