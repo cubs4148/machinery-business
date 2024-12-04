@@ -21,11 +21,55 @@
             line-height: 1.6;
             color: #555;
         }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+        .return-home {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .return-home:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
     <h1>About Us</h1>
     <p>Established in 1996, CDMglobal has been a trusted leader in the second-hand machinery business for over two decades. With offices in Chicago, Illinois, Lima, Peru, New Delhi, India, and Ahmedabad, Gujarat, we proudly serve clients across the globe.</p>
     <p>We specialize in high-quality metalworking machinery, including CNC machines, EDMs, lathes, and a variety of other industrial equipment. Our mission is to provide reliable, cost-effective solutions for businesses of all sizes.</p>
+    
+    <footer>
+        <p>&copy; <span id="currentYear"></span> CDMglobal. All rights reserved.</p>
+        <p>Last updated: <span id="currentDateTime"></span></p>
+    </footer>
+
+    <button class="return-home" onclick="returnHome()">Return Home</button>
+
+    <script>
+        // Set current year
+        const currentYear = new Date().getFullYear();
+        document.getElementById('currentYear').textContent = currentYear;
+
+        // Set current date and time
+        const currentDateTime = new Date().toLocaleString();
+        document.getElementById('currentDateTime').textContent = currentDateTime;
+
+        // Function to return to home page
+        function returnHome() {
+            window.location.href = '/'; // Adjust this URL as needed for your site
+        }
+    </script>
 </body>
 </html>
