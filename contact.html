@@ -5,86 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CDMglobal - Contact</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="contact.css">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            margin: 0;
-            padding: 0;
-        }
-        .contact-container {
-            display: flex;
-            justify-content: space-around;
-            align-items: flex-start;
-            padding: 20px;
-            background-color: #ffffff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 20px;
-        }
-        .form-container {
-            width: 50%;
-        }
-        .form-container form {
-            display: flex;
-            flex-direction: column;
-        }
-        .form-container label {
-            margin: 10px 0 5px;
-            font-weight: bold;
-        }
-        .form-container input, .form-container textarea, .form-container select {
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            width: 100%;
-        }
-        .form-container button {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .form-container button:hover {
-            background-color: #0056b3;
-        }
-        .privacy-policy {
-            margin: 10px 0;
-        }
-        .map-container {
-            width: 45%;
-            text-align: center;
-        }
-        .map-container iframe {
-            width: 100%;
-            height: 300px;
-            border: none;
-        }
-        .contact-info, .social-media-links {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            position: relative;
-        }
-        .footer a {
-            color: #ffffff;
-            text-decoration: none;
-        }
-    </style>
 </head>
-<body>
+<body style="background-image: url('file:///Users/chiragchaudhari/Downloads/abc.jpg'); background-size: cover; background-position: center;">
     <div class="contact-container">
         <div class="form-container">
             <h2>Contact Us</h2>
-            <form>
+            <form action="/submit-contact-form" method="POST">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
@@ -114,7 +42,7 @@
                     <label for="privacy">I accept the <a href="#">Privacy Policy</a></label>
                 </div>
 
-                <div class="g-recaptcha" data-sitekey="your-site-key"></div>
+                <div class="g-recaptcha" data-sitekey="your-actual-site-key"></div>
 
                 <button type="submit" id="submit-button">Submit</button>
             </form>
@@ -169,11 +97,12 @@
             }
         }
 
-        document.getElementById('submit-button').addEventListener('click', sendEmail);
+        document.querySelector('form').addEventListener('submit', sendEmail);
 
         function updateDateTime() {
             const now = new Date();
-            const dateTime = new Intl.DateTimeFormat('en-US', {
+            const userLocale = navigator.language || 'en-US';
+            const dateTime = new Intl.DateTimeFormat(userLocale, {
                 dateStyle: 'full',
                 timeStyle: 'long'
             }).format(now);
