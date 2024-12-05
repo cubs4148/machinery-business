@@ -129,9 +129,17 @@
     </div>
     <div class="products">
         <div class="product">
-            <h3>Charmilles Robofil 440CC - 4 Axis Wire EDM</h3>
-            <img src="https://upload.example.com/Screenshot-2024-12-04-at-12.22.21-AM.png" alt="Charmilles Robofil 440CC - 4 Axis Wire EDM">
-            <p>High-performance wire EDM for precision engineering.</p>
+    <a href="#" class="show-details" data-machine-name="$1">
+        <h3>$1</h3>
+    </a>
+    <div class="details-modal" id="details-$1" class="details-modal hidden">
+        <div class="modal-content">
+            <span class="close" onclick="closeDetails('$1')">&times;</span>
+            <h3>$1 Details</h3>
+            <p>Here are the details of $1. Add more machine information here.</p>
+        </div>
+    </div>
+</div>
         </div>
         <div class="product">
             <h3>HAAS DS-30SS – 2016</h3>
@@ -169,6 +177,8 @@
         <p id="date-time">Today's Date: </p>
     </footer>
 
+    
+    </script>
     <script>
         function updateDateTime() {
             try {
@@ -181,6 +191,37 @@
         }
         setInterval(updateDateTime, 1000);
         updateDateTime();
+
+        function showDetails(machineName) {
+            // Replaced alert with modal opening functionality
+        }
+    </script>
+    <script>
+        function updateDateTime() {
+            try {
+                const now = new Date();
+                const dateTime = `${now.toLocaleDateString()} ${now.toLocaleTimeString()}`;
+                document.getElementById('date-time').textContent = `Today's Date: ${dateTime}`;
+            } catch (error) {
+                console.error('Error updating date and time:', error);
+            }
+        }
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+
+        function showDetails(machineName) {
+            const modal = document.querySelector(`[id='details-${machineName.replace(/[^a-zA-Z0-9_-]/g, '')}']`);
+            if (modal) {
+                modal.style.display = 'block';
+            }
+        }
+
+        function closeDetails(machineName) {
+            const modal = document.getElementById(`details-${machineName}`);
+            if (modal) {
+                modal.style.display = 'none';
+            }
+        }
     </script>
 </body>
 </html>
