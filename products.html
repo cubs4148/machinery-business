@@ -88,10 +88,37 @@
         .return-home:hover {
             background: #555;
         }
+        /* Advanced Search and Filtering */
+        .search-filter {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .search-filter input[type="text"] {
+            padding: 10px;
+            width: 70%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .search-filter select {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
     <h1>Our Products</h1>
+    <div class="search-filter">
+        <input type="text" placeholder="Search products...">
+        <select>
+            <option value="">Filter by Category</option>
+            <option value="cnc-lathes">CNC Lathes</option>
+            <option value="vertical-machining">Vertical Machining Centers</option>
+            <option value="horizontal-machining">Horizontal Machining Centers</option>
+        </select>
+    </div>
     <div class="products">
         <div class="product">
             <h3>Charmilles Robofil 440CC - 4 Axis Wire EDM</h3>
@@ -139,6 +166,7 @@
         </div>
         <div class="product">
             <h3>MAKINO A51NX – 2016</h3>
+            <img src="https://upload.example.com/makino-a51nx.png" alt="Makino A51NX CNC Horizontal Machining Center">
             <p>Makino A51NX CNC Horizontal Machining Center with the following specifications:</p>
             <ul>
                 <li><strong>Pallet Size:</strong> 15.7″ x 15.7″</li>
