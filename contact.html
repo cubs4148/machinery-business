@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CDMglobal - Contact</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
     <h1>Contact Us</h1>
@@ -14,13 +15,18 @@
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" placeholder="Enter your message" rows="4" required></textarea>
 
-                <button type="submit" onclick="sendEmail(event)">Submit</button>
+                <div class="g-recaptcha" data-sitekey="your-site-key"></div>
+
+                <button type="submit" id="submit-button">Submit</button>
             </form>
         </div>
         <div class="map-container">
@@ -34,25 +40,40 @@
             </iframe>
         </div>
     </div>
+    <div class="contact-info">
+        <h3>Contact Information</h3>
+        <p><strong>Phone:</strong> 1-800-123-4567</p>
+        <p><strong>Email:</strong> contact@cdmglobal.com</p>
+    </div>
+    <div class="social-media-links">
+        <h3>Connect with Us</h3>
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a> |
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a> |
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
     <script>
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
         function sendEmail(event) {
             event.preventDefault();
             const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
             const email = document.getElementById('email').value;
             const message = document.getElementById('message').value;
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
             if (!emailPattern.test(email)) {
                 alert('Please enter a valid email address.');
                 return;
             }
 
-            if (name && email && message) {
+            if (name && phone && email && message) {
                 alert(`Thank you, ${name}! Your message has been sent.`);
             } else {
                 alert('Please fill out all fields before submitting.');
             }
         }
+
+        document.getElementById('submit-button').addEventListener('click', sendEmail);
     </script>
     <footer>
         <a href="index.html" class="return-home" style="position: fixed; top: 20px; right: 20px; z-index: 1000;">Return to Home</a>
@@ -69,8 +90,8 @@
                 timeStyle: 'long'
             }).format(now);
             document.getElementById('date-time').textContent = `Today's Date: ${dateTime.replace(/[<>]/g, '')}`;
+            requestAnimationFrame(updateDateTime);
         }
-        setInterval(updateDateTime, 1000);
         updateDateTime();
     </script>
 </body>
