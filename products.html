@@ -8,11 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui/1.12.1/jquery-ui.min.css">
-    
-    
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui/1.12.1/jquery-ui.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -30,6 +25,10 @@
         .product:hover {
             box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
             transform: scale(1.02);
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
         }
         .product img:hover {
             transform: scale(1.05);
@@ -83,15 +82,16 @@
             margin: 0 5px;
             color: #333;
         }
+        .sort-options {
+            margin: 10px 0;
+        }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <a href="index.html" class="return-home" aria-label="Return to Home Page"><i class="fas fa-home"></i> Return to Home</a>
     <h1>Our Products</h1>
+
+    <!-- Search, Filter, and Sort Section -->
     <div class="search-filter">
         <input type="text" placeholder="Search products..." id="product-search">
         <select id="category-filter">
@@ -100,124 +100,45 @@
             <option value="vertical-machining">Vertical Machining Centers</option>
             <option value="horizontal-machining">Horizontal Machining Centers</option>
         </select>
+        <select id="sort-options" class="sort-options">
+            <option value="">Sort By</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="rating">Rating</option>
+            <option value="name">Name</option>
+        </select>
     </div>
+
     <div class="products" id="products-container">
-    <div id="back-to-top" class="back-to-top"><i class="fas fa-arrow-up"></i></div>
-    <button id="chat-support" class="chat-support">Chat with Support</button>
-    <!-- Product Carousel (for featured products) -->
-    <div class="product-carousel">
-        <div class="carousel-navigation">
-            <button class="carousel-prev">Prev</button>
-            <button class="carousel-next">Next</button>
-        </div>
-        <div class="carousel-item">
-            <img src="images/featured1.jpg" alt="Featured Product 1">
-            <h3>Featured Product 1</h3>
-        </div>
-        <div class="carousel-item">
-            <img src="images/featured2.jpg" alt="Featured Product 2">
-            <h3>Featured Product 2</h3>
-        </div>
-    </div>
-        <div class="carousel-item">
-            <img src="images/featured2.jpg" alt="Featured Product 2">
-            <h3>Featured Product 2</h3>
-        </div>
-    </div>
         <div class="product" data-price="15000" data-category="cnc-lathes">
-    <div class="wishlist-button" onclick="addToWishlist('Robofil 440CC')"><i class="fas fa-heart"></i></div>
-    <img src="images/robofil440cc.jpg" alt="Robofil 440CC - 4 Axis Wire EDM">
-    <div class="rating">
-        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
-    </div>
-    <h3>Robofil 440CC - 4 Axis Wire EDM</h3>
-    <button class="cta-button" onclick="showDetails('Robofil 440CC')">View Details</button>
-    <div id="details-Robofil-440CC" class="details-modal hidden">
-        <div class="modal-content">
-            <span class="close" onclick="closeDetails('Robofil-440CC')">&times;</span>
-            <h3>Robofil 440CC - 4 Axis Wire EDM Details</h3>
-            <p>Here are the details of the Robofil 440CC - 4 Axis Wire EDM machine...</p>
+            <img src="images/robofil440cc.jpg" alt="Robofil 440CC - 4 Axis Wire EDM" loading="lazy">
+            <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+            </div>
+            <h3>Robofil 440CC - 4 Axis Wire EDM</h3>
+            <button class="cta-button" data-target="details-Robofil-440CC">View Details</button>
+            <div id="details-Robofil-440CC" class="details-modal hidden">
+                <div class="modal-content" role="dialog" aria-labelledby="modal-title">
+                    <span class="close" onclick="closeDetails('Robofil-440CC')">&times;</span>
+                    <h3 id="modal-title">Robofil 440CC - 4 Axis Wire EDM Details</h3>
+                    <p>Here are the details of the Robofil 440CC - 4 Axis Wire EDM machine...</p>
+                    <button class="cta-button contact-button">Inquire about this Machine</button>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-        </div>
-        <div class="product">
-    <img src="images/haas_ds30ss.jpg" alt="HAAS DS-30SS – 2016">
-    <h3>HAAS DS-30SS – 2016</h3>
-    <button class="cta-button" onclick="showDetails('HAAS DS-30SS')">View Details</button>
-    <div id="details-HAAS-DS-30SS" class="details-modal hidden">
-        <div class="modal-content">
-            <span class="close" onclick="closeDetails('HAAS-DS-30SS')">&times;</span>
-            <h3>HAAS DS-30SS – 2016 Details</h3>
-            <p>Here are the details of the HAAS DS-30SS – 2016 machine...</p>
-        </div>
-    </div>
-        </div>
-        <div class="product">
-    <img src="images/makino_a51nx.jpg" alt="MAKINO A51NX – 2016">
-    <h3>MAKINO A51NX – 2016</h3>
-    <button class="cta-button" onclick="showDetails('MAKINO A51NX')">View Details</button>
-    <div id="details-MAKINO-A51NX" class="details-modal hidden">
-        <div class="modal-content">
-            <span class="close" onclick="closeDetails('MAKINO-A51NX')">&times;</span>
-            <h3>MAKINO A51NX – 2016 Details</h3>
-            <p>Here are the details of the MAKINO A51NX – 2016 machine...</p>
-        </div>
-    </div>
-        </div>
-        <div class="product">
-    <img src="images/machine4.jpg" alt="Machine 4">
-    <h3>Machine 4</h3>
-    <button class="cta-button" onclick="showDetails('Machine 4')">View Details</button>
-    <div id="details-Machine-4" class="details-modal hidden">
-        <div class="modal-content">
-            <span class="close" onclick="closeDetails('Machine-4')">&times;</span>
-            <h3>Machine 4 Details</h3>
-            <p>Here are the details of Machine 4...</p>
-        </div>
-    </div>
-        </div>
-        <div class="product">
-    <img src="images/machine$1.jpg" alt="Machine $1">
-    <h3>Machine $1</h3>
-    <button class="cta-button" onclick="showDetails('Machine $1')">View Details</button>
-    <div id="details-Machine-$1" class="details-modal hidden">
-        <div class="modal-content">
-            <span class="close" onclick="closeDetails('Machine-$1')">&times;</span>
-            <h3>Machine $1 Details</h3>
-            <p>Here are the details of Machine $1...</p>
-            <button class="cta-button contact-button">Inquire about this Machine</button>
-        </div>
-    </div>
-        </div>
-        <div class="product">
-    <img src="images/machine6.jpg" alt="Machine 6">
-    <h3>Machine 6</h3>
-    <button class="cta-button" onclick="showDetails('Machine 6')">View Details</button>
-    <div id="details-Machine-6" class="details-modal hidden">
-        <div class="modal-content">
-            <span class="close" onclick="closeDetails('Machine-6')">&times;</span>
-            <h3>Machine 6 Details</h3>
-            <p>Here are the details of Machine 6...</p>
-        </div>
-    </div>
-        </div>
-        <div class="product">
-            <h3>Machine 7</h3>
-        </div>
-        <div class="product">
-            <h3>Machine 8</h3>
-        </div>
-        <div class="product">
-            <h3>Machine 9</h3>
-        </div>
-    </div>
+
+    <!-- Pagination -->
     <div class="pagination">
         <a href="#">1</a>
         <a href="#">2</a>
         <a href="#">3</a>
         <a href="#">Next</a>
     </div>
+
+    <!-- Back to Top Button -->
+    <div id="back-to-top" class="back-to-top"><i class="fas fa-arrow-up"></i></div>
+
     <footer>
         <p>&copy; 2024 CDMglobal. All rights reserved.</p>
         <p id="date-time">Today's Date: </p>
@@ -233,105 +154,46 @@
             <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
         </div>
     </footer>
-    <script src="scripts.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
-    
-    </script>
-    <script src="scripts.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             updateDateTime();
+
+            // Initialize carousel
             $('.product-carousel').slick({
                 autoplay: true,
                 autoplaySpeed: 3000,
                 arrows: true,
                 dots: true
             });
-            $('#product-search').on('input', function() {
+
+            // Debounced search functionality
+            let searchTimeout;
+            $('#product-search').on('input', function () {
+                clearTimeout(searchTimeout);
                 const query = $(this).val().toLowerCase();
-                $('.product').each(function() {
-                    const titleElement = $(this).find('h3');
-                    const titleText = titleElement.text().toLowerCase();
-                    $(this).toggle(titleText.includes(query));
-                    if (titleText.includes(query)) {
-                        const highlighted = titleText.replace(new RegExp(query, 'gi'), (match) => `<mark>${match}</mark>`);
-                        titleElement.html(highlighted);
-                    } else {
-                        titleElement.html(titleElement.text());
-                    }
-                });
+                searchTimeout = setTimeout(() => {
+                    $('.product').each(function () {
+                        const title = $(this).find('h3').text().toLowerCase();
+                        $(this).toggle(title.includes(query));
+                    });
+                }, 300);
             });
-            $('#category-filter').on('change', function() {
+
+            // Filter by category
+            $('#category-filter').on('change', function () {
                 const category = $(this).val();
-                $('.product').each(function() {
+                $('.product').each(function () {
                     const productCategory = $(this).data('category');
-                    if (category === '' || productCategory === category) {
-                        $(this).show();
-                    } else {
-                        $(this).hide();
-                    }
+                    $(this).toggle(!category || productCategory === category);
                 });
             });
-            $('#sort-options').on('change', function() {
+
+            // Sort options
+            $('#sort-options').on('change', function () {
                 const sortBy = $(this).val();
-                let products = $('.product').toArray();
-                products.sort(function(a, b) {
-                    if (sortBy === 'price-low') {
-                        return $(a).data('price') - $(b).data('price');
-                    } else if (sortBy === 'price-high') {
-                        return $(b).data('price') - $(a).data('price');
-                    }
-                    return 0;
-                });
-                $('#products-container').empty().append(products);
-            });
-            $('#back-to-top').on('click', function() {
-                $('html, body').animate({ scrollTop: 0 }, 'slow');
-            });
-            $('#chat-support').on('click', function() {
-                // Open a chat support window or widget here
-                alert('Connecting to support...');
-            });
-            $(document).on('keydown', function(event) {
-                if (event.key === 'Escape') {
-                    $('.details-modal').addClass('hidden');
-                }
-            });
-        });
-
-        function updateDateTime() {
-            try {
-                const now = new Date();
-                const dateTime = `${now.toLocaleDateString()} ${now.toLocaleTimeString()}`;
-                document.getElementById('date-time').textContent = `Today's Date: ${dateTime}`;
-            } catch (error) {
-                console.error('Error updating date and time:', error);
-            }
-        }
-
-        function showDetails(machineName) {
-            const modal = document.querySelector(`#details-${machineName.replace(/[^a-zA-Z0-9_-]/g, '')}`);
-            if (modal) {
-                modal.classList.remove('hidden');
-            }
-            modal.setAttribute('aria-live', 'assertive');
-        }
-        }
-
-        function closeDetails(machineName) {
-            const modal = document.getElementById(`details-${machineName}`);
-            if (modal) {
-                modal.classList.add('hidden');
-            }
-        }
-    </script>
-</body>
-</html>
+                const products = $('.product
