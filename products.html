@@ -23,79 +23,52 @@
     </div>
 
     <div class="products-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
-        <!-- Existing Products -->
-        <div class="product-box">
-            <div class="product" data-price="15000" data-category="cnc-lathes" data-rating="4.5">
-                <img src="images/robofil440cc.jpg" alt="Robofil 440CC - 4 Axis Wire EDM" loading="lazy">
-                <div class="rating">
-                    <span class="dynamic-rating" data-rating="4.5"></span>
-                </div>
-                <h3>Robofil 440CC - 4 Axis Wire EDM</h3>
-                <button class="cta-button" data-target="details-Robofil-440CC">View Details</button>
-                <div id="details-Robofil-440CC" class="details-modal hidden">
-                    <div class="modal-content" role="dialog" aria-labelledby="modal-title" aria-describedby="details-Robofil-440CC">
-                        <span class="close" onclick="closeDetails('Robofil-440CC')">&times;</span>
-                        <h3 id="modal-title">Robofil 440CC - 4 Axis Wire EDM Details</h3>
-                        <p>Here are the details of the Robofil 440CC - 4 Axis Wire EDM machine...</p>
-                        <button class="cta-button contact-button">Inquire about this Machine</button>
-                    </div>
-                </div>
+    <!-- New Product -->
+    <div class="product-box">
+        <div class="product" data-price="35000" data-category="cnc-lathes" data-rating="4.5">
+            <img src="images/doosan_puma_300.jpg" alt="Doosan Puma 300 CNC Lathe" loading="lazy">
+            <div class="product-details">
+                <h3>Doosan Puma 300 CNC Lathe</h3>
+                <p>Max Turning Diameter: 20"<br>
+                   Max Turning Length: 40"<br>
+                   Spindle Speed: 3,500 RPM<br>
+                   Spindle Motor: 30 HP</p>
+                <p class="price">Price: $35,000.00</p>
             </div>
-        </div>
-
-        <!-- New Products -->
-        <!-- MAZAK QUICK TURN 300 CNC LATHE -->
-        <div class="product-box">
-            <div class="product" data-price="23600" data-category="cnc-lathes" data-rating="4.0">
-                <img src="images/mazak_quick_turn_300.jpg" alt="MAZAK QUICK TURN 300 CNC LATHE" loading="lazy">
-                <div class="rating">
-                    <span class="dynamic-rating" data-rating="4.0"></span>
-                </div>
-                <h3>MAZAK QUICK TURN 300 CNC LATHE</h3>
-                <button class="cta-button" data-target="details-Mazak-Quick-Turn-300">View Details</button>
-                <div id="details-Mazak-Quick-Turn-300" class="details-modal hidden">
-                    <div class="modal-content" role="dialog" aria-labelledby="modal-title" aria-describedby="details-Mazak-Quick-Turn-300">
-                        <span class="close" onclick="closeDetails('Mazak-Quick-Turn-300')">&times;</span>
-                        <h3 id="modal-title">MAZAK QUICK TURN 300 CNC LATHE Details</h3>
-                        <p>Max Turning Diameter: 16.1″<br>
-                            Max Turning Length: 39.7″<br>
-                            Max Bar Capacity: 2.75″<br>
-                            Swing Over Bed: 23.64″<br>
-                            Spindle Speed: 30-3300 RPM<br>
-                            Spindle Motor: 30 HP<br>
-                            Tool Presetter, Programmable Hydraulic Tailstock, Coolant System, Chip conveyor<br>
-                            Price: $23,600.00</p>
-                        <button class="cta-button contact-button">Inquire about this Machine</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- HARDINGE Quest 8/51 Super Precision CNC Lathe -->
-        <div class="product-box">
-            <div class="product" data-price="45654" data-category="cnc-lathes" data-rating="4.7">
-                <img src="images/hardinge_quest_8_51.jpg" alt="HARDINGE Quest 8/51 Super Precision CNC Lathe" loading="lazy">
-                <div class="rating">
-                    <span class="dynamic-rating" data-rating="4.7"></span>
-                </div>
-                <h3>HARDINGE Quest 8/51 Super Precision CNC Lathe</h3>
-                <button class="cta-button" data-target="details-Hardinge-Quest-8-51">View Details</button>
-                <div id="details-Hardinge-Quest-8-51" class="details-modal hidden">
-                    <div class="modal-content" role="dialog" aria-labelledby="modal-title" aria-describedby="details-Hardinge-Quest-8-51">
-                        <span class="close" onclick="closeDetails('Hardinge-Quest-8-51')">&times;</span>
-                        <h3 id="modal-title">HARDINGE Quest 8/51 Super Precision CNC Lathe Details</h3>
-                        <p>12 STATION T STYLE TURRET, Air Blast, Parts catcher & Tailstock<br>
-                            High Speed Spindle & Chip conveyor<br>
-                            Fanuc 21iTB CNC Control<br>
-                            Price: $45,654.00</p>
-                        <button class="cta-button contact-button">Inquire about this Machine</button>
-                    </div>
+            <button class="cta-button" data-target="details-Doosan-Puma-300">View Details</button>
+            <div id="details-Doosan-Puma-300" class="details-modal hidden">
+                <div class="modal-content" role="dialog" aria-labelledby="modal-title" aria-describedby="details-Doosan-Puma-300">
+                    <span class="close" onclick="closeDetails('Doosan-Puma-300')">&times;</span>
+                    <h3 id="modal-title">Doosan Puma 300 CNC Lathe Details</h3>
+                    <p>Max Turning Diameter: 20"<br>
+                       Max Turning Length: 40"<br>
+                       Spindle Speed: 3,500 RPM<br>
+                       Spindle Motor: 30 HP<br>
+                       Turret Capacity: 12 Stations<br>
+                       Coolant System<br>
+                       Chip Conveyor</p>
+                    <button class="cta-button contact-button">Inquire about this Machine</button>
                 </div>
             </div>
         </div>
     </div>
+</div>
+                <button class="cta-button" data-target="details-Example-CNC-Machine">View Details</button>
+                <div id="details-Example-CNC-Machine" class="details-modal hidden">
+                    <div class="modal-content" role="dialog" aria-labelledby="modal-title" aria-describedby="details-Example-CNC-Machine">
+                        <span class="close" onclick="closeDetails('Example-CNC-Machine')">&times;</span>
+                        <h3 id="modal-title">Example CNC Machine Details</h3>
+                        <p>Here are the detailed specifications of the Example CNC Machine...</p>
+                        <button class="cta-button contact-button">Inquire about this Machine</button>
+                    </div>
+                </div>
+            </div>
+        </div></div>
+                </div>
+            </div>
+        </div>
 
-    <!-- Pagination Script -->
+        <!-- Pagination Script -->
     <script>
         const productsPerPage = 9;
         let currentPage = 1;
