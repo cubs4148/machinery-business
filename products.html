@@ -1,203 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NxT Machinery - Products</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        .product {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            border-radius: 5px;
-            transition: all 0.3s ease-in-out;
-        }
-        .product:hover {
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-            transform: scale(1.02);
-        }
-        .product img {
-            max-width: 100%;
-            height: auto;
-        }
-        .product img:hover {
-            transform: scale(1.05);
-            transition: transform 0.3s ease;
-        }
-        .details-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-        .details-modal.hidden {
-            display: none;
-        }
-        .modal-content {
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            width: 80%;
-            max-width: 600px;
-            position: relative;
-        }
-        .search-filter {
-            position: sticky;
-            top: 0;
-            background-color: #fff;
-            z-index: 100;
-            padding: 10px;
-        }
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #333;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .rating {
-            color: #ffd700;
-        }
-        .social-share a {
-            margin: 0 5px;
-            color: #333;
-        }
-        .sort-options {
-            margin: 10px 0;
-        }
-    </style>
-</head>
-<body>
-    <a href="index.html" class="return-home" aria-label="Return to Home Page"><i class="fas fa-home"></i> Return to Home</a>
-    <h1>Our Products</h1>
-
-    <!-- Search, Filter, and Sort Section -->
-    <div class="search-filter">
-        <input type="text" placeholder="Search products..." id="product-search">
-        <select id="category-filter">
-            <option value="">Filter by Category</option>
-            <option value="cnc-lathes">CNC Lathes</option>
-            <option value="vertical-machining">Vertical Machining Centers</option>
-            <option value="horizontal-machining">Horizontal Machining Centers</option>
-        </select>
-        <select id="sort-options" class="sort-options">
-            <option value="">Sort By</option>
-            <option value="price-low">Price: Low to High</option>
-            <option value="price-high">Price: High to Low</option>
-            <option value="rating">Rating</option>
-            <option value="name">Name</option>
-        </select>
-    </div>
-
-    <div class="products" id="products-container">
-        <div class="product" data-price="15000" data-category="cnc-lathes">
-            <img src="images/robofil440cc.jpg" alt="Robofil 440CC - 4 Axis Wire EDM" loading="lazy">
-            <div class="rating">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
-            </div>
-            <h3>Robofil 440CC - 4 Axis Wire EDM</h3>
-            <button class="cta-button" data-target="details-Robofil-440CC">View Details</button>
-            <div id="details-Robofil-440CC" class="details-modal hidden">
-                <div class="modal-content" role="dialog" aria-labelledby="modal-title">
-                    <span class="close" onclick="closeDetails('Robofil-440CC')">&times;</span>
-                    <h3 id="modal-title">Robofil 440CC - 4 Axis Wire EDM Details</h3>
-                    <p>Here are the details of the Robofil 440CC - 4 Axis Wire EDM machine...</p>
-                    <button class="cta-button contact-button">Inquire about this Machine</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Pagination -->
-    <div class="pagination">
-        <a href="#">1</a>
-        <a href="#">2</a>
-        <a href="#">3</a>
-        <a href="#">Next</a>
-    </div>
-
-    <!-- Back to Top Button -->
-    <div id="back-to-top" class="back-to-top"><i class="fas fa-arrow-up"></i></div>
-
-    <footer>
-        <p>&copy; 2024 NxT Machinery. All rights reserved.</p>
-        <p id="date-time">Today's Date: </p>
-        <nav aria-label="Breadcrumb">
-            <ul class="breadcrumb">
-                <li><a href="index.html">Home</a></li>
-                <li>Products</li>
-            </ul>
-        </nav>
-        <div class="social-share">
-            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            updateDateTime();
-
-            // Initialize carousel
-            $('.product-carousel').slick({
-                autoplay: true,
-                autoplaySpeed: 3000,
-                arrows: true,
-                dots: true
-            });
-
-            // Debounced search functionality
-            let searchTimeout;
-            $('#product-search').on('input', function () {
-                clearTimeout(searchTimeout);
-                const query = $(this).val().toLowerCase();
-                searchTimeout = setTimeout(() => {
-                    $('.product').each(function () {
-                        const title = $(this).find('h3').text().toLowerCase();
-                        $(this).toggle(title.includes(query));
-                    });
-                }, 300);
-            });
-
-            // Filter by category
-            $('#category-filter').on('change', function () {
-                const category = $(this).val();
-                $('.product').each(function () {
-                    const productCategory = $(this).data('category');
-                    $(this).toggle(!category || productCategory === category);
-                });
-            });
-
-            // Sort options
-            $('#sort-options').on('change', function () {
-                const sortBy = $(this).val();
-                const products = $('.product
-
 <div class="products" id="products-container">
     <!-- Existing Products -->
     <div class="product" data-price="15000" data-category="cnc-lathes">
@@ -232,6 +32,8 @@
                     Max Bar Capacity: 2.75″<br>
                     Swing Over Bed: 23.64″<br>
                     Spindle Speed: 30-3300 RPM<br>
+                    Spindle Motor: 30 HP<br>
+                    Tool Presetter, Programmable Hydraulic Tailstock, Coolant System, Chip conveyor<br>
                     Price: $23,600.00</p>
                 <button class="cta-button contact-button">Inquire about this Machine</button>
             </div>
@@ -293,6 +95,74 @@
             </div>
         </div>
     </div>
+
+    <!-- Additional Products from Word Document -->
+    <!-- Product 1: Mazak Variaxis i-600 -->
+    <div class="product" data-price="72000" data-category="machining-centers">
+        <img src="images/mazak_variaxis_i600.jpg" alt="Mazak Variaxis i-600" loading="lazy">
+        <h3>Mazak Variaxis i-600</h3>
+        <button class="cta-button" data-target="details-Mazak-Variaxis-i600">View Details</button>
+        <div id="details-Mazak-Variaxis-i600" class="details-modal hidden">
+            <div class="modal-content" role="dialog" aria-labelledby="modal-title">
+                <span class="close" onclick="closeDetails('Mazak-Variaxis-i600')">&times;</span>
+                <h3 id="modal-title">Mazak Variaxis i-600 Details</h3>
+                <p>5-Axis Machining Center<br>
+                    Spindle Speed: 12,000 RPM<br>
+                    Tool Changer Capacity: 40<br>
+                    Price: $72,000.00</p>
+                <button class="cta-button contact-button">Inquire about this Machine</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product 2: Okuma LB3000 EX II -->
+    <div class="product" data-price="85000" data-category="cnc-lathes">
+        <img src="images/okuma_lb3000_ex_ii.jpg" alt="Okuma LB3000 EX II" loading="lazy">
+        <h3>Okuma LB3000 EX II</h3>
+        <button class="cta-button" data-target="details-Okuma-LB3000-EX-II">View Details</button>
+        <div id="details-Okuma-LB3000-EX-II" class="details-modal hidden">
+            <div class="modal-content" role="dialog" aria-labelledby="modal-title">
+                <span class="close" onclick="closeDetails('Okuma-LB3000-EX-II')">&times;</span>
+                <h3 id="modal-title">Okuma LB3000 EX II Details</h3>
+                <p>Max Turning Diameter: 20″<br>
+                    Spindle Speed: 4,200 RPM<br>
+                    Price: $85,000.00</p>
+                <button class="cta-button contact-button">Inquire about this Machine</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product 3: Doosan Puma 2600SY II -->
+    <div class="product" data-price="91000" data-category="cnc-lathes">
+        <img src="images/doosan_puma_2600sy_ii.jpg" alt="Doosan Puma 2600SY II" loading="lazy">
+        <h3>Doosan Puma 2600SY II</h3>
+        <button class="cta-button" data-target="details-Doosan-Puma-2600SY-II">View Details</button>
+        <div id="details-Doosan-Puma-2600SY-II" class="details-modal hidden">
+            <div class="modal-content" role="dialog" aria-labelledby="modal-title">
+                <span class="close" onclick="closeDetails('Doosan-Puma-2600SY-II')">&times;</span>
+                <h3 id="modal-title">Doosan Puma 2600SY II Details</h3>
+                <p>Y-Axis CNC Lathe<br>
+                    Max Turning Diameter: 15″<br>
+                    Price: $91,000.00</p>
+                <button class="cta-button contact-button">Inquire about this Machine</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product 4: Trumpf TruLaser 3030 -->
+    <div class="product" data-price="120000" data-category="laser-cutters">
+        <img src="images/trumpf_trulaser_3030.jpg" alt="Trumpf TruLaser 3030" loading="lazy">
+        <h3>Trumpf TruLaser 3030</h3>
+        <button class="cta-button" data-target="details-Trumpf-TruLaser-3030">View Details</button>
+        <div id="details-Trumpf-TruLaser-3030" class="details-modal hidden">
+            <div class="modal-content" role="dialog" aria-labelledby="modal-title">
+                <span class="close" onclick="closeDetails('Trumpf-TruLaser-3030')">&times;</span>
+                <h3 id="modal-title">Trumpf TruLaser 3030 Details</h3>
+                <p>Laser Cutting Machine<br>
+                    Max Cutting Thickness: 25 mm<br>
+                    Price: $120,000.00</p>
+                <button class="cta-button contact-button">Inquire about this Machine</button>
+            </div>
+        </div>
+    </div>
 </div>
-
-
