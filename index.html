@@ -238,8 +238,10 @@
             <h1>NxT Machinery</h1>
         </div>
         <div class="search-bar">
-            <input type="text" placeholder="Search machinery...">
-            <button>Search</button>
+            <form action="/search" method="GET">
+                <input type="text" name="query" placeholder="Search machinery...">
+                <button type="submit">Search</button>
+            </form>
         </div>
         <div class="nav">
             <a href="products.html"><span class="icon">🛠</span>Products</a>
@@ -251,9 +253,9 @@
         <h1>Welcome to NxT Machinery</h1>
         <p>Your trusted partner for high-quality second-hand machinery and equipment solutions.</p>
         <div class="buttons">
-            <a href="products.html">View Products</a>
-            <a href="about.html">Learn About Us</a>
-            <a href="contact.html">Get in Touch</a>
+            <a href="products.html" class="btn-primary">View Products</a>
+            <a href="about.html" class="btn-secondary">Learn About Us</a>
+            <a href="contact.html" class="btn-tertiary">Get in Touch</a>
         </div>
     </div>
     <div class="popular-categories">
