@@ -197,3 +197,102 @@
             $('#sort-options').on('change', function () {
                 const sortBy = $(this).val();
                 const products = $('.product
+
+<div class="products" id="products-container">
+    <!-- Existing Products -->
+    <div class="product" data-price="15000" data-category="cnc-lathes">
+        <img src="images/robofil440cc.jpg" alt="Robofil 440CC - 4 Axis Wire EDM" loading="lazy">
+        <div class="rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+        </div>
+        <h3>Robofil 440CC - 4 Axis Wire EDM</h3>
+        <button class="cta-button" data-target="details-Robofil-440CC">View Details</button>
+        <div id="details-Robofil-440CC" class="details-modal hidden">
+            <div class="modal-content" role="dialog" aria-labelledby="modal-title">
+                <span class="close" onclick="closeDetails('Robofil-440CC')">&times;</span>
+                <h3 id="modal-title">Robofil 440CC - 4 Axis Wire EDM Details</h3>
+                <p>Here are the details of the Robofil 440CC - 4 Axis Wire EDM machine...</p>
+                <button class="cta-button contact-button">Inquire about this Machine</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Products -->
+    <!-- MAZAK QUICK TURN 300 CNC LATHE -->
+    <div class="product" data-price="23600" data-category="cnc-lathes">
+        <img src="images/mazak_quick_turn_300.jpg" alt="MAZAK QUICK TURN 300 CNC LATHE" loading="lazy">
+        <h3>MAZAK QUICK TURN 300 CNC LATHE</h3>
+        <button class="cta-button" data-target="details-Mazak-Quick-Turn-300">View Details</button>
+        <div id="details-Mazak-Quick-Turn-300" class="details-modal hidden">
+            <div class="modal-content" role="dialog" aria-labelledby="modal-title">
+                <span class="close" onclick="closeDetails('Mazak-Quick-Turn-300')">&times;</span>
+                <h3 id="modal-title">MAZAK QUICK TURN 300 CNC LATHE Details</h3>
+                <p>Max Turning Diameter: 16.1″<br>
+                    Max Turning Length: 39.7″<br>
+                    Max Bar Capacity: 2.75″<br>
+                    Swing Over Bed: 23.64″<br>
+                    Spindle Speed: 30-3300 RPM<br>
+                    Price: $23,600.00</p>
+                <button class="cta-button contact-button">Inquire about this Machine</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- HARDINGE Quest 8/51 Super Precision CNC Lathe -->
+    <div class="product" data-price="45654" data-category="cnc-lathes">
+        <img src="images/hardinge_quest_8_51.jpg" alt="HARDINGE Quest 8/51 Super Precision CNC Lathe" loading="lazy">
+        <h3>HARDINGE Quest 8/51 Super Precision CNC Lathe</h3>
+        <button class="cta-button" data-target="details-Hardinge-Quest-8-51">View Details</button>
+        <div id="details-Hardinge-Quest-8-51" class="details-modal hidden">
+            <div class="modal-content" role="dialog" aria-labelledby="modal-title">
+                <span class="close" onclick="closeDetails('Hardinge-Quest-8-51')">&times;</span>
+                <h3 id="modal-title">HARDINGE Quest 8/51 Super Precision CNC Lathe Details</h3>
+                <p>12 STATION T STYLE TURRET, Air Blast, Parts catcher & Tailstock<br>
+                    High Speed Spindle & Chip conveyor<br>
+                    Fanuc 21iTB CNC Control<br>
+                    Price: $45,654.00</p>
+                <button class="cta-button contact-button">Inquire about this Machine</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Durr Ecoclean Parts Washer Compact 80C -->
+    <div class="product" data-price="14000" data-category="parts-washers">
+        <img src="images/durr_ecoclean_80c.jpg" alt="Durr Ecoclean Parts Washer Compact 80C" loading="lazy">
+        <h3>Durr Ecoclean Parts Washer Compact 80C</h3>
+        <button class="cta-button" data-target="details-Durr-Ecoclean-80C">View Details</button>
+        <div id="details-Durr-Ecoclean-80C" class="details-modal hidden">
+            <div class="modal-content" role="dialog" aria-labelledby="modal-title">
+                <span class="close" onclick="closeDetails('Durr-Ecoclean-80C')">&times;</span>
+                <h3 id="modal-title">Durr Ecoclean Parts Washer Compact 80C Details</h3>
+                <p>Solvent Based Parts Washer<br>
+                    Heating Capacity: 13.25 kW<br>
+                    Cooling Capacity: 5 kW<br>
+                    Filling Capacity: 650L<br>
+                    Price: $14,000.00</p>
+                <button class="cta-button contact-button">Inquire about this Machine</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- HAAS EC-500 4-AXIS CNC HORIZONTAL MACHINING CENTER -->
+    <div class="product" data-price="25000" data-category="machining-centers">
+        <img src="images/haas_ec_500.jpg" alt="HAAS EC-500 4-AXIS CNC HORIZONTAL MACHINING CENTER" loading="lazy">
+        <h3>HAAS EC-500 4-AXIS CNC HORIZONTAL MACHINING CENTER</h3>
+        <button class="cta-button" data-target="details-Haas-EC-500">View Details</button>
+        <div id="details-Haas-EC-500" class="details-modal hidden">
+            <div class="modal-content" role="dialog" aria-labelledby="modal-title">
+                <span class="close" onclick="closeDetails('Haas-EC-500')">&times;</span>
+                <h3 id="modal-title">HAAS EC-500 4-AXIS CNC HORIZONTAL MACHINING CENTER Details</h3>
+                <p>4th Axis Pallet Index<br>
+                    Tool Changer Capacity: 40<br>
+                    Spindle Speed: 12,100 RPM<br>
+                    Pallet Load Capacity: 880 pounds<br>
+                    Price: $25,000.00</p>
+                <button class="cta-button contact-button">Inquire about this Machine</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
