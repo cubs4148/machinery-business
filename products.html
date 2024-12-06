@@ -1,168 +1,206 @@
+<div class="filter-container">
+    <label for="category-filter">Filter by Category:</label>
+    <select id="category-filter">
+        <option value="all">All</option>
+        <option value="cnc-lathes">CNC Lathes</option>
+        <option value="machining-centers">Machining Centers</option>
+        <option value="parts-washers">Parts Washers</option>
+        <option value="laser-cutters">Laser Cutters</option>
+    </select>
+    <label for="price-sort">Sort by Price:</label>
+    <select id="price-sort">
+        <option value="asc">Low to High</option>
+        <option value="desc">High to Low</option>
+    </select>
+</div>
+
 <div class="products" id="products-container">
-    <!-- Existing Products -->
-    <div class="product" data-price="15000" data-category="cnc-lathes">
-        <img src="images/robofil440cc.jpg" alt="Robofil 440CC - 4 Axis Wire EDM" loading="lazy">
-        <div class="rating">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+    <!-- Pagination Controls -->
+    <div class="pagination-controls">
+        <button id="prev-page" disabled>Previous</button>
+        <span id="page-info">Page 1</span>
+        <button id="next-page">Next</button>
+    </div>
+
+    <div class="products-grid">
+        <!-- Existing Products -->
+        <div class="product-box">
+            <div class="product" data-price="15000" data-category="cnc-lathes" data-rating="4.5">
+                <img src="images/robofil440cc.jpg" alt="Robofil 440CC - 4 Axis Wire EDM" loading="lazy">
+                <div class="rating">
+                    <span class="dynamic-rating" data-rating="4.5"></span>
+                </div>
+                <h3>Robofil 440CC - 4 Axis Wire EDM</h3>
+                <button class="cta-button" data-target="details-Robofil-440CC">View Details</button>
+                <div id="details-Robofil-440CC" class="details-modal hidden">
+                    <div class="modal-content" role="dialog" aria-labelledby="modal-title" aria-describedby="details-Robofil-440CC">
+                        <span class="close" onclick="closeDetails('Robofil-440CC')">&times;</span>
+                        <h3 id="modal-title">Robofil 440CC - 4 Axis Wire EDM Details</h3>
+                        <p>Here are the details of the Robofil 440CC - 4 Axis Wire EDM machine...</p>
+                        <button class="cta-button contact-button">Inquire about this Machine</button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <h3>Robofil 440CC - 4 Axis Wire EDM</h3>
-        <button class="cta-button" data-target="details-Robofil-440CC">View Details</button>
-        <div id="details-Robofil-440CC" class="details-modal hidden">
-            <div class="modal-content" role="dialog" aria-labelledby="modal-title">
-                <span class="close" onclick="closeDetails('Robofil-440CC')">&times;</span>
-                <h3 id="modal-title">Robofil 440CC - 4 Axis Wire EDM Details</h3>
-                <p>Here are the details of the Robofil 440CC - 4 Axis Wire EDM machine...</p>
-                <button class="cta-button contact-button">Inquire about this Machine</button>
+
+        <!-- New Products -->
+        <!-- MAZAK QUICK TURN 300 CNC LATHE -->
+        <div class="product-box">
+            <div class="product" data-price="23600" data-category="cnc-lathes" data-rating="4.0">
+                <img src="images/mazak_quick_turn_300.jpg" alt="MAZAK QUICK TURN 300 CNC LATHE" loading="lazy">
+                <div class="rating">
+                    <span class="dynamic-rating" data-rating="4.0"></span>
+                </div>
+                <h3>MAZAK QUICK TURN 300 CNC LATHE</h3>
+                <button class="cta-button" data-target="details-Mazak-Quick-Turn-300">View Details</button>
+                <div id="details-Mazak-Quick-Turn-300" class="details-modal hidden">
+                    <div class="modal-content" role="dialog" aria-labelledby="modal-title" aria-describedby="details-Mazak-Quick-Turn-300">
+                        <span class="close" onclick="closeDetails('Mazak-Quick-Turn-300')">&times;</span>
+                        <h3 id="modal-title">MAZAK QUICK TURN 300 CNC LATHE Details</h3>
+                        <p>Max Turning Diameter: 16.1″<br>
+                            Max Turning Length: 39.7″<br>
+                            Max Bar Capacity: 2.75″<br>
+                            Swing Over Bed: 23.64″<br>
+                            Spindle Speed: 30-3300 RPM<br>
+                            Spindle Motor: 30 HP<br>
+                            Tool Presetter, Programmable Hydraulic Tailstock, Coolant System, Chip conveyor<br>
+                            Price: $23,600.00</p>
+                        <button class="cta-button contact-button">Inquire about this Machine</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- HARDINGE Quest 8/51 Super Precision CNC Lathe -->
+        <div class="product-box">
+            <div class="product" data-price="45654" data-category="cnc-lathes" data-rating="4.7">
+                <img src="images/hardinge_quest_8_51.jpg" alt="HARDINGE Quest 8/51 Super Precision CNC Lathe" loading="lazy">
+                <div class="rating">
+                    <span class="dynamic-rating" data-rating="4.7"></span>
+                </div>
+                <h3>HARDINGE Quest 8/51 Super Precision CNC Lathe</h3>
+                <button class="cta-button" data-target="details-Hardinge-Quest-8-51">View Details</button>
+                <div id="details-Hardinge-Quest-8-51" class="details-modal hidden">
+                    <div class="modal-content" role="dialog" aria-labelledby="modal-title" aria-describedby="details-Hardinge-Quest-8-51">
+                        <span class="close" onclick="closeDetails('Hardinge-Quest-8-51')">&times;</span>
+                        <h3 id="modal-title">HARDINGE Quest 8/51 Super Precision CNC Lathe Details</h3>
+                        <p>12 STATION T STYLE TURRET, Air Blast, Parts catcher & Tailstock<br>
+                            High Speed Spindle & Chip conveyor<br>
+                            Fanuc 21iTB CNC Control<br>
+                            Price: $45,654.00</p>
+                        <button class="cta-button contact-button">Inquire about this Machine</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- New Products -->
-    <!-- MAZAK QUICK TURN 300 CNC LATHE -->
-    <div class="product" data-price="23600" data-category="cnc-lathes">
-        <img src="images/mazak_quick_turn_300.jpg" alt="MAZAK QUICK TURN 300 CNC LATHE" loading="lazy">
-        <h3>MAZAK QUICK TURN 300 CNC LATHE</h3>
-        <button class="cta-button" data-target="details-Mazak-Quick-Turn-300">View Details</button>
-        <div id="details-Mazak-Quick-Turn-300" class="details-modal hidden">
-            <div class="modal-content" role="dialog" aria-labelledby="modal-title">
-                <span class="close" onclick="closeDetails('Mazak-Quick-Turn-300')">&times;</span>
-                <h3 id="modal-title">MAZAK QUICK TURN 300 CNC LATHE Details</h3>
-                <p>Max Turning Diameter: 16.1″<br>
-                    Max Turning Length: 39.7″<br>
-                    Max Bar Capacity: 2.75″<br>
-                    Swing Over Bed: 23.64″<br>
-                    Spindle Speed: 30-3300 RPM<br>
-                    Spindle Motor: 30 HP<br>
-                    Tool Presetter, Programmable Hydraulic Tailstock, Coolant System, Chip conveyor<br>
-                    Price: $23,600.00</p>
-                <button class="cta-button contact-button">Inquire about this Machine</button>
-            </div>
-        </div>
-    </div>
+    <!-- Pagination Script -->
+    <script>
+        const productsPerPage = 9;
+        let currentPage = 1;
 
-    <!-- HARDINGE Quest 8/51 Super Precision CNC Lathe -->
-    <div class="product" data-price="45654" data-category="cnc-lathes">
-        <img src="images/hardinge_quest_8_51.jpg" alt="HARDINGE Quest 8/51 Super Precision CNC Lathe" loading="lazy">
-        <h3>HARDINGE Quest 8/51 Super Precision CNC Lathe</h3>
-        <button class="cta-button" data-target="details-Hardinge-Quest-8-51">View Details</button>
-        <div id="details-Hardinge-Quest-8-51" class="details-modal hidden">
-            <div class="modal-content" role="dialog" aria-labelledby="modal-title">
-                <span class="close" onclick="closeDetails('Hardinge-Quest-8-51')">&times;</span>
-                <h3 id="modal-title">HARDINGE Quest 8/51 Super Precision CNC Lathe Details</h3>
-                <p>12 STATION T STYLE TURRET, Air Blast, Parts catcher & Tailstock<br>
-                    High Speed Spindle & Chip conveyor<br>
-                    Fanuc 21iTB CNC Control<br>
-                    Price: $45,654.00</p>
-                <button class="cta-button contact-button">Inquire about this Machine</button>
-            </div>
-        </div>
-    </div>
+        function updatePagination() {
+            const products = document.querySelectorAll('.product-box');
+            const totalPages = Math.ceil(products.length / productsPerPage);
 
-    <!-- Durr Ecoclean Parts Washer Compact 80C -->
-    <div class="product" data-price="14000" data-category="parts-washers">
-        <img src="images/durr_ecoclean_80c.jpg" alt="Durr Ecoclean Parts Washer Compact 80C" loading="lazy">
-        <h3>Durr Ecoclean Parts Washer Compact 80C</h3>
-        <button class="cta-button" data-target="details-Durr-Ecoclean-80C">View Details</button>
-        <div id="details-Durr-Ecoclean-80C" class="details-modal hidden">
-            <div class="modal-content" role="dialog" aria-labelledby="modal-title">
-                <span class="close" onclick="closeDetails('Durr-Ecoclean-80C')">&times;</span>
-                <h3 id="modal-title">Durr Ecoclean Parts Washer Compact 80C Details</h3>
-                <p>Solvent Based Parts Washer<br>
-                    Heating Capacity: 13.25 kW<br>
-                    Cooling Capacity: 5 kW<br>
-                    Filling Capacity: 650L<br>
-                    Price: $14,000.00</p>
-                <button class="cta-button contact-button">Inquire about this Machine</button>
-            </div>
-        </div>
-    </div>
+            products.forEach((product, index) => {
+                if (index >= (currentPage - 1) * productsPerPage && index < currentPage * productsPerPage) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
 
-    <!-- HAAS EC-500 4-AXIS CNC HORIZONTAL MACHINING CENTER -->
-    <div class="product" data-price="25000" data-category="machining-centers">
-        <img src="images/haas_ec_500.jpg" alt="HAAS EC-500 4-AXIS CNC HORIZONTAL MACHINING CENTER" loading="lazy">
-        <h3>HAAS EC-500 4-AXIS CNC HORIZONTAL MACHINING CENTER</h3>
-        <button class="cta-button" data-target="details-Haas-EC-500">View Details</button>
-        <div id="details-Haas-EC-500" class="details-modal hidden">
-            <div class="modal-content" role="dialog" aria-labelledby="modal-title">
-                <span class="close" onclick="closeDetails('Haas-EC-500')">&times;</span>
-                <h3 id="modal-title">HAAS EC-500 4-AXIS CNC HORIZONTAL MACHINING CENTER Details</h3>
-                <p>4th Axis Pallet Index<br>
-                    Tool Changer Capacity: 40<br>
-                    Spindle Speed: 12,100 RPM<br>
-                    Pallet Load Capacity: 880 pounds<br>
-                    Price: $25,000.00</p>
-                <button class="cta-button contact-button">Inquire about this Machine</button>
-            </div>
-        </div>
-    </div>
+            document.getElementById('page-info').textContent = `Page ${currentPage} of ${totalPages}`;
+            document.getElementById('prev-page').disabled = currentPage === 1;
+            document.getElementById('next-page').disabled = currentPage === totalPages;
+        }
 
-    <!-- Additional Products from Word Document -->
-    <!-- Product 1: Mazak Variaxis i-600 -->
-    <div class="product" data-price="72000" data-category="machining-centers">
-        <img src="images/mazak_variaxis_i600.jpg" alt="Mazak Variaxis i-600" loading="lazy">
-        <h3>Mazak Variaxis i-600</h3>
-        <button class="cta-button" data-target="details-Mazak-Variaxis-i600">View Details</button>
-        <div id="details-Mazak-Variaxis-i600" class="details-modal hidden">
-            <div class="modal-content" role="dialog" aria-labelledby="modal-title">
-                <span class="close" onclick="closeDetails('Mazak-Variaxis-i600')">&times;</span>
-                <h3 id="modal-title">Mazak Variaxis i-600 Details</h3>
-                <p>5-Axis Machining Center<br>
-                    Spindle Speed: 12,000 RPM<br>
-                    Tool Changer Capacity: 40<br>
-                    Price: $72,000.00</p>
-                <button class="cta-button contact-button">Inquire about this Machine</button>
-            </div>
-        </div>
-    </div>
+        document.getElementById('prev-page').addEventListener('click', function() {
+            if (currentPage > 1) {
+                currentPage--;
+                updatePagination();
+            }
+        });
 
-    <!-- Product 2: Okuma LB3000 EX II -->
-    <div class="product" data-price="85000" data-category="cnc-lathes">
-        <img src="images/okuma_lb3000_ex_ii.jpg" alt="Okuma LB3000 EX II" loading="lazy">
-        <h3>Okuma LB3000 EX II</h3>
-        <button class="cta-button" data-target="details-Okuma-LB3000-EX-II">View Details</button>
-        <div id="details-Okuma-LB3000-EX-II" class="details-modal hidden">
-            <div class="modal-content" role="dialog" aria-labelledby="modal-title">
-                <span class="close" onclick="closeDetails('Okuma-LB3000-EX-II')">&times;</span>
-                <h3 id="modal-title">Okuma LB3000 EX II Details</h3>
-                <p>Max Turning Diameter: 20″<br>
-                    Spindle Speed: 4,200 RPM<br>
-                    Price: $85,000.00</p>
-                <button class="cta-button contact-button">Inquire about this Machine</button>
-            </div>
-        </div>
-    </div>
+        document.getElementById('next-page').addEventListener('click', function() {
+            const products = document.querySelectorAll('.product-box');
+            const totalPages = Math.ceil(products.length / productsPerPage);
+            if (currentPage < totalPages) {
+                currentPage++;
+                updatePagination();
+            }
+        });
 
-    <!-- Product 3: Doosan Puma 2600SY II -->
-    <div class="product" data-price="91000" data-category="cnc-lathes">
-        <img src="images/doosan_puma_2600sy_ii.jpg" alt="Doosan Puma 2600SY II" loading="lazy">
-        <h3>Doosan Puma 2600SY II</h3>
-        <button class="cta-button" data-target="details-Doosan-Puma-2600SY-II">View Details</button>
-        <div id="details-Doosan-Puma-2600SY-II" class="details-modal hidden">
-            <div class="modal-content" role="dialog" aria-labelledby="modal-title">
-                <span class="close" onclick="closeDetails('Doosan-Puma-2600SY-II')">&times;</span>
-                <h3 id="modal-title">Doosan Puma 2600SY II Details</h3>
-                <p>Y-Axis CNC Lathe<br>
-                    Max Turning Diameter: 15″<br>
-                    Price: $91,000.00</p>
-                <button class="cta-button contact-button">Inquire about this Machine</button>
-            </div>
-        </div>
-    </div>
+        updatePagination();
+    </script>
 
-    <!-- Product 4: Trumpf TruLaser 3030 -->
-    <div class="product" data-price="120000" data-category="laser-cutters">
-        <img src="images/trumpf_trulaser_3030.jpg" alt="Trumpf TruLaser 3030" loading="lazy">
-        <h3>Trumpf TruLaser 3030</h3>
-        <button class="cta-button" data-target="details-Trumpf-TruLaser-3030">View Details</button>
-        <div id="details-Trumpf-TruLaser-3030" class="details-modal hidden">
-            <div class="modal-content" role="dialog" aria-labelledby="modal-title">
-                <span class="close" onclick="closeDetails('Trumpf-TruLaser-3030')">&times;</span>
-                <h3 id="modal-title">Trumpf TruLaser 3030 Details</h3>
-                <p>Laser Cutting Machine<br>
-                    Max Cutting Thickness: 25 mm<br>
-                    Price: $120,000.00</p>
-                <button class="cta-button contact-button">Inquire about this Machine</button>
-            </div>
-        </div>
-    </div>
+    <!-- JavaScript for Filtering and Modal Interaction -->
+    <script>
+        document.getElementById('category-filter').addEventListener('change', function() {
+            const category = this.value;
+            const products = document.querySelectorAll('.product');
+            products.forEach(product => {
+                if (category === 'all' || product.dataset.category === category) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        });
+
+        document.getElementById('price-sort').addEventListener('change', function() {
+            const order = this.value;
+            const productsContainer = document.querySelector('.products-grid');
+            const products = Array.from(productsContainer.children);
+            products.sort((a, b) => {
+                const priceA = parseInt(a.querySelector('.product').dataset.price);
+                const priceB = parseInt(b.querySelector('.product').dataset.price);
+                return order === 'asc' ? priceA - priceB : priceB - priceA;
+            });
+            products.forEach(product => productsContainer.appendChild(product));
+        });
+
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const target = this.dataset.target;
+                const modal = document.getElementById(target);
+                modal.classList.remove('hidden');
+                modal.classList.add('show');
+            });
+        });
+
+        document.querySelectorAll('.close').forEach(closeButton => {
+            closeButton.addEventListener('click', function() {
+                const modal = this.closest('.details-modal');
+                modal.classList.remove('show');
+                modal.classList.add('hidden');
+            });
+        });
+
+        window.addEventListener('click', function(event) {
+            document.querySelectorAll('.details-modal.show').forEach(modal => {
+                if (event.target === modal) {
+                    modal.classList.remove('show');
+                    modal.classList.add('hidden');
+                }
+            });
+        });
+
+        document.querySelectorAll('.dynamic-rating').forEach(ratingElement => {
+            const rating = parseFloat(ratingElement.dataset.rating);
+            const filledStars = Math.floor(rating);
+            const halfStar = rating % 1 >= 0.5 ? 1 : 0;
+            for (let i = 0; i < filledStars; i++) {
+                ratingElement.innerHTML += '<i class="fas fa-star"></i>';
+            }
+            if (halfStar) {
+                ratingElement.innerHTML += '<i class="fas fa-star-half-alt"></i>';
+            }
+            for (let i = filledStars + halfStar; i < 5; i++) {
+                ratingElement.innerHTML += '<i class="far fa-star"></i>';
+            }
+        });
+    </script>
 </div>
