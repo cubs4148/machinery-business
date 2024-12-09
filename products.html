@@ -66,10 +66,10 @@
 <div class="carousel">
     <div class="carousel-images">
         <img src="1111.jpg" alt="Machine Image 1" class="active">
-        <img src="1112.jpg" alt="Machine Image 2">
-        <img src="1116.jpg" alt="Machine Image 3">
+        <img src="1116.jpg" alt="Machine Image 2">
+        <img src="1111.jpg" alt="Machine Image 3">
         <img src="1116.jpg" alt="Machine Image 4">
-        <img src="1116.jpg" alt="Machine Image 5">
+        <img src="1111.jpg" alt="Machine Image 5">
         <img src="1116.jpg" alt="Machine Image 6">
     </div>
     <div class="carousel-buttons">
@@ -108,12 +108,51 @@
     <p><strong>Location:</strong> USA</p>
 </div>
 
+<div class="carousel">
+    <div class="carousel-images">
+        <img src="1116.jpg" alt="Haas EC-500 Image 1" class="active">
+        <img src="1121..jpg" alt="Haas EC-500 Image 2">
+        <img src="1111.jpg">
+        <img src="1116.jpg" alt="Haas EC-500 Image 4">
+        <img src="1111.jpg">
+    </div>
+    <div class="carousel-buttons">
+        <button id="prev2">Previous</button>
+        <button id="next2">Next</button>
+    </div>
+</div>
+
+<div class="machine-description">
+    <h3>Machine Details</h3>
+    <p><strong>Brand:</strong> HAAS</p>
+    <p><strong>Model:</strong> EC-500</p>
+    <p><strong>Category:</strong> Horizontal Machining Center</p>
+    <p><strong>Overview:</strong> The Haas EC-500 is a horizontal machining center featuring 500 mm twin pallets, high-speed rapids, and powerful machining capabilities. It is engineered for precise and efficient operations.</p>
+    <p><strong>Specs:</strong></p>
+    <ul>
+        <li><strong>X Axis Travel:</strong> 32"</li>
+        <li><strong>Y Axis Travel:</strong> 25"</li>
+        <li><strong>Z Axis Travel:</strong> 28"</li>
+        <li><strong>Pallet Size:</strong> 19.7" x 19.7"</li>
+        <li><strong>Max Weight on Pallet:</strong> 880 lbs</li>
+        <li><strong>Tool Capacity:</strong> 30+1</li>
+        <li><strong>Spindle Speed:</strong> 12,000 RPM</li>
+        <li><strong>Spindle Power:</strong> 30 HP</li>
+        <li><strong>Rapid Traverse Rates:</strong> 1,200 IPM</li>
+        <li><strong>Machine Weight:</strong> 17,500 lbs</li>
+    </ul>
+    <p><strong>Price:</strong> Contact Seller</p>
+</div>
+
 <script>
     const images = document.querySelectorAll('.carousel-images img');
     const prevButton = document.getElementById('prev');
     const nextButton = document.getElementById('next');
+    const prevButton2 = document.getElementById('prev2');
+    const nextButton2 = document.getElementById('next2');
 
     let currentIndex = 0;
+    let currentIndex2 = 0;
 
     function updateCarousel() {
         images.forEach((img, index) => {
@@ -121,26 +160,12 @@
         });
     }
 
+    function updateCarousel2() {
+        const carousel2Images = document.querySelectorAll('.carousel-images:nth-child(2) img');
+        carousel2Images.forEach((img, index) => {
+            img.classList.toggle('active', index === currentIndex2);
+        });
+    }
+
     nextButton.addEventListener('click', () => {
-        if (currentIndex < images.length - 1) {
-            currentIndex++;
-        } else {
-            currentIndex = 0; // Loop back to the first image
-        }
-        updateCarousel();
-    });
-
-    prevButton.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-        } else {
-            currentIndex = images.length - 1; // Loop back to the last image
-        }
-        updateCarousel();
-    });
-
-    updateCarousel();
-</script>
-
-</body>
-</html>
+        if (currentIndex
