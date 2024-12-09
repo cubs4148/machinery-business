@@ -21,6 +21,10 @@
 
         .carousel-images img {
             max-width: 100%;
+            display: none;
+        }
+
+        .carousel-images img.active {
             display: block;
         }
 
@@ -51,7 +55,7 @@
 
 <div class="carousel">
     <div class="carousel-images">
-        <img src="/mnt/data/3c50f89b-bdba-48ca-bbdd-b2200125dfe6.jpg" alt="Machine Image 1">
+        <img src="/mnt/data/3c50f89b-bdba-48ca-bbdd-b2200125dfe6.jpg" alt="Machine Image 1" class="active">
         <img src="/mnt/data/3e7537ce-8d39-4850-9ff3-b2200125e97f.jpg" alt="Machine Image 2">
         <img src="/mnt/data/4c724033-c3a8-40ea-9f31-b23c00eb7a70.jpg" alt="Machine Image 3">
         <img src="/mnt/data/6c2409bd-97c5-4672-a900-b2200125ebd0.jpg" alt="Machine Image 4">
@@ -65,7 +69,6 @@
 </div>
 
 <script>
-    const carouselImages = document.querySelector('.carousel-images');
     const images = document.querySelectorAll('.carousel-images img');
     const prevButton = document.getElementById('prev');
     const nextButton = document.getElementById('next');
@@ -73,25 +76,30 @@
     let currentIndex = 0;
 
     function updateCarousel() {
-        const imageWidth = images[0].clientWidth;
-        carouselImages.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
+        images.forEach((img, index) => {
+            img.classList.toggle('active', index === currentIndex);
+        });
     }
 
     nextButton.addEventListener('click', () => {
         if (currentIndex < images.length - 1) {
             currentIndex++;
-            updateCarousel();
+        } else {
+            currentIndex = 0; // Loop back to the first image
         }
+        updateCarousel();
     });
 
     prevButton.addEventListener('click', () => {
         if (currentIndex > 0) {
             currentIndex--;
-            updateCarousel();
+        } else {
+            currentIndex = images.length - 1; // Loop back to the last image
         }
+        updateCarousel();
     });
 
-    window.addEventListener('resize', updateCarousel);
+    updateCarousel();
 </script>
 
 </body>
