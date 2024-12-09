@@ -1,179 +1,98 @@
-<div class="filter-container">
-    <label for="category-filter">Filter by Category:</label>
-    <select id="category-filter">
-        <option value="all">All</option>
-        <option value="cnc-lathes">CNC Lathes</option>
-        <option value="machining-centers">Machining Centers</option>
-        <option value="parts-washers">Parts Washers</option>
-        <option value="laser-cutters">Laser Cutters</option>
-    </select>
-    <label for="price-sort">Sort by Price:</label>
-    <select id="price-sort">
-        <option value="asc">Low to High</option>
-        <option value="desc">High to Low</option>
-    </select>
-</div>
-
-<div class="products" id="products-container">
-    <!-- Pagination Controls -->
-    <div class="pagination-controls">
-        <button id="prev-page" disabled>Previous</button>
-        <span id="page-info">Page 1</span>
-        <button id="next-page">Next</button>
-    </div>
-
-    <div class="products-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
-    <!-- New Product -->
-    <div class="product-box">
-        <div class="product" data-price="35000" data-category="cnc-lathes" data-rating="4.5">
-            <img src="images/doosan_puma_300.jpg" alt="Doosan Puma 300 CNC Lathe" loading="lazy">
-            <div class="product-details">
-                <h3>Doosan Puma 300 CNC Lathe</h3>
-                <p>Max Turning Diameter: 20"<br>
-                   Max Turning Length: 40"<br>
-                   Spindle Speed: 3,500 RPM<br>
-                   Spindle Motor: 30 HP</p>
-                <p class="price">Price: $35,000.00</p>
-            </div>
-            <button class="cta-button" data-target="details-Doosan-Puma-300">View Details</button>
-            <div id="details-Doosan-Puma-300" class="details-modal hidden">
-                <div class="modal-content" role="dialog" aria-labelledby="modal-title" aria-describedby="details-Doosan-Puma-300">
-                    <span class="close" onclick="closeDetails('Doosan-Puma-300')">&times;</span>
-                    <h3 id="modal-title">Doosan Puma 300 CNC Lathe Details</h3>
-                    <p>Max Turning Diameter: 20"<br>
-                       Max Turning Length: 40"<br>
-                       Spindle Speed: 3,500 RPM<br>
-                       Spindle Motor: 30 HP<br>
-                       Turret Capacity: 12 Stations<br>
-                       Coolant System<br>
-                       Chip Conveyor</p>
-                    <button class="cta-button contact-button">Inquire about this Machine</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-                <button class="cta-button" data-target="details-Example-CNC-Machine">View Details</button>
-                <div id="details-Example-CNC-Machine" class="details-modal hidden">
-                    <div class="modal-content" role="dialog" aria-labelledby="modal-title" aria-describedby="details-Example-CNC-Machine">
-                        <span class="close" onclick="closeDetails('Example-CNC-Machine')">&times;</span>
-                        <h3 id="modal-title">Example CNC Machine Details</h3>
-                        <p>Here are the detailed specifications of the Example CNC Machine...</p>
-                        <button class="cta-button contact-button">Inquire about this Machine</button>
-                    </div>
-                </div>
-            </div>
-        </div></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Pagination Script -->
-    <script>
-        const productsPerPage = 9;
-        let currentPage = 1;
-
-        function updatePagination() {
-            const products = document.querySelectorAll('.product-box');
-            const totalPages = Math.ceil(products.length / productsPerPage);
-
-            products.forEach((product, index) => {
-                if (index >= (currentPage - 1) * productsPerPage && index < currentPage * productsPerPage) {
-                    product.style.display = 'block';
-                } else {
-                    product.style.display = 'none';
-                }
-            });
-
-            document.getElementById('page-info').textContent = `Page ${currentPage} of ${totalPages}`;
-            document.getElementById('prev-page').disabled = currentPage === 1;
-            document.getElementById('next-page').disabled = currentPage === totalPages;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Image Slider</title>
+    <style>
+        .carousel {
+            position: relative;
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+            border: 1px solid #ddd;
+            border-radius: 10px;
         }
 
-        document.getElementById('prev-page').addEventListener('click', function() {
-            if (currentPage > 1) {
-                currentPage--;
-                updatePagination();
-            }
-        });
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
 
-        document.getElementById('next-page').addEventListener('click', function() {
-            const products = document.querySelectorAll('.product-box');
-            const totalPages = Math.ceil(products.length / productsPerPage);
-            if (currentPage < totalPages) {
-                currentPage++;
-                updatePagination();
-            }
-        });
+        .carousel-images img {
+            max-width: 100%;
+            display: block;
+        }
 
-        updatePagination();
-    </script>
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
 
-    <!-- JavaScript for Filtering and Modal Interaction -->
-    <script>
-        document.getElementById('category-filter').addEventListener('change', function() {
-            const category = this.value;
-            const products = document.querySelectorAll('.product');
-            products.forEach(product => {
-                if (category === 'all' || product.dataset.category === category) {
-                    product.style.display = 'block';
-                } else {
-                    product.style.display = 'none';
-                }
-            });
-        });
+        .carousel-buttons button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
 
-        document.getElementById('price-sort').addEventListener('change', function() {
-            const order = this.value;
-            const productsContainer = document.querySelector('.products-grid');
-            const products = Array.from(productsContainer.children);
-            products.sort((a, b) => {
-                const priceA = parseInt(a.querySelector('.product').dataset.price);
-                const priceB = parseInt(b.querySelector('.product').dataset.price);
-                return order === 'asc' ? priceA - priceB : priceB - priceA;
-            });
-            products.forEach(product => productsContainer.appendChild(product));
-        });
+        .carousel-buttons button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
 
-        document.querySelectorAll('.cta-button').forEach(button => {
-            button.addEventListener('click', function() {
-                const target = this.dataset.target;
-                const modal = document.getElementById(target);
-                modal.classList.remove('hidden');
-                modal.classList.add('show');
-            });
-        });
-
-        document.querySelectorAll('.close').forEach(closeButton => {
-            closeButton.addEventListener('click', function() {
-                const modal = this.closest('.details-modal');
-                modal.classList.remove('show');
-                modal.classList.add('hidden');
-            });
-        });
-
-        window.addEventListener('click', function(event) {
-            document.querySelectorAll('.details-modal.show').forEach(modal => {
-                if (event.target === modal) {
-                    modal.classList.remove('show');
-                    modal.classList.add('hidden');
-                }
-            });
-        });
-
-        document.querySelectorAll('.dynamic-rating').forEach(ratingElement => {
-            const rating = parseFloat(ratingElement.dataset.rating);
-            const filledStars = Math.floor(rating);
-            const halfStar = rating % 1 >= 0.5 ? 1 : 0;
-            for (let i = 0; i < filledStars; i++) {
-                ratingElement.innerHTML += '<i class="fas fa-star"></i>';
-            }
-            if (halfStar) {
-                ratingElement.innerHTML += '<i class="fas fa-star-half-alt"></i>';
-            }
-            for (let i = filledStars + halfStar; i < 5; i++) {
-                ratingElement.innerHTML += '<i class="far fa-star"></i>';
-            }
-        });
-    </script>
+<div class="carousel">
+    <div class="carousel-images">
+        <img src="/mnt/data/3c50f89b-bdba-48ca-bbdd-b2200125dfe6.jpg" alt="Machine Image 1">
+        <img src="/mnt/data/3e7537ce-8d39-4850-9ff3-b2200125e97f.jpg" alt="Machine Image 2">
+        <img src="/mnt/data/4c724033-c3a8-40ea-9f31-b23c00eb7a70.jpg" alt="Machine Image 3">
+        <img src="/mnt/data/6c2409bd-97c5-4672-a900-b2200125ebd0.jpg" alt="Machine Image 4">
+        <img src="/mnt/data/185fe6a7-ceef-4204-82ae-b2200125ea0b.jpg" alt="Machine Image 5">
+        <img src="/mnt/data/67648c8d-50aa-46ee-8fc7-b2200125e8d6.jpg" alt="Machine Image 6">
+    </div>
+    <div class="carousel-buttons">
+        <button id="prev">Previous</button>
+        <button id="next">Next</button>
+    </div>
 </div>
+
+<script>
+    const carouselImages = document.querySelector('.carousel-images');
+    const images = document.querySelectorAll('.carousel-images img');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+
+    let currentIndex = 0;
+
+    function updateCarousel() {
+        const imageWidth = images[0].clientWidth;
+        carouselImages.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
+    }
+
+    nextButton.addEventListener('click', () => {
+        if (currentIndex < images.length - 1) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+
+    prevButton.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
+
+    window.addEventListener('resize', updateCarousel);
+</script>
+
+</body>
+</html>
