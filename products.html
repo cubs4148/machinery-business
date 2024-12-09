@@ -3,296 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NxT Machinery - Products</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <title>Machine Image Slider</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+        .carousel {
+            position: relative;
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+
+        .carousel-images {
             display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            transition: transform 0.5s ease-in-out;
         }
-        .product {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            border-radius: 5px;
-            transition: all 0.3s ease-in-out;
-        }
-        .product:hover {
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-            transform: scale(1.02);
-        }
-        .product img {
+
+        .carousel-images img {
             max-width: 100%;
-            height: auto;
-        }
-        .product img:hover {
-            transform: scale(1.05);
-            transition: transform 0.3s ease;
-        }
-        .details-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-        .details-modal.hidden {
             display: none;
         }
-        .modal-content {
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            width: 80%;
-            max-width: 600px;
-            position: relative;
+
+        .carousel-images img.active {
+            display: block;
         }
-        .search-filter {
-            position: sticky;
-            top: 0;
-            background-color: #fff;
-            z-index: 100;
-            padding: 10px;
+
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
         }
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #333;
+
+        .carousel-buttons button {
+            background-color: rgba(0, 0, 0, 0.5);
             color: white;
-            padding: 10px;
             border: none;
-            border-radius: 5px;
+            padding: 10px 20px;
             cursor: pointer;
+            border-radius: 5px;
         }
-        .rating {
-            color: #ffd700;
+
+        .carousel-buttons button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
         }
-        .social-share a {
-            margin: 0 5px;
-            color: #333;
-        }
-        .sort-options {
-            margin: 10px 0;
+
+        .machine-description {
+            text-align: left;
+            margin-top: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
         }
     </style>
 </head>
 <body>
-    <a href="index.html" class="return-home" aria-label="Return to Home Page"><i class="fas fa-home"></i> Return to Home</a>
-    <h1>Our Products</h1>
 
-    <!-- Search, Filter, and Sort Section -->
-    <div class="search-filter">
-        <input type="text" placeholder="Search products..." id="product-search">
-        <select id="category-filter">
-            <option value="">Filter by Category</option>
-            <option value="cnc-lathes">CNC Lathes</option>
-            <option value="vertical-machining">Vertical Machining Centers</option>
-            <option value="horizontal-machining">Horizontal Machining Centers</option>
-        </select>
-        <select id="sort-options" class="sort-options">
-            <option value="">Sort By</option>
-            <option value="price-low">Price: Low to High</option>
-            <option value="price-high">Price: High to Low</option>
-            <option value="rating">Rating</option>
-            <option value="name">Name</option>
-        </select>
+<div class="carousel">
+    <div class="carousel-images">
+        <img src="1111.jpg" alt="Machine Image 1" class="active">
+        <img src="1116.jpg" alt="Machine Image 2">
+        <img src="1111.jpg" alt="Machine Image 3">
+        <img src="1116.jpg" alt="Machine Image 4">
+        <img src="1111.jpg" alt="Machine Image 5">
+        <img src="1116.jpg" alt="Machine Image 6">
     </div>
-
-    <div class="products" id="products-container">
-        <div class="product" data-price="15000" data-category="cnc-lathes">
-            <img src="images/robofil440cc.jpg" alt="Robofil 440CC - 4 Axis Wire EDM" loading="lazy">
-            <div class="rating">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
-            </div>
-            <h3>Robofil 440CC - 4 Axis Wire EDM</h3>
-            <button class="cta-button" data-target="details-Robofil-440CC">View Details</button>
-            <div id="details-Robofil-440CC" class="details-modal hidden">
-                <div class="modal-content" role="dialog" aria-labelledby="modal-title">
-                    <span class="close" onclick="closeDetails('Robofil-440CC')">&times;</span>
-                    <h3 id="modal-title">Robofil 440CC - 4 Axis Wire EDM Details</h3>
-                    <p>Here are the details of the Robofil 440CC - 4 Axis Wire EDM machine...</p>
-                    <button class="cta-button contact-button">Inquire about this Machine</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Pagination -->
-    <div class="pagination">
-        <a href="#">1</a>
-        <a href="#">2</a>
-        <a href="#">3</a>
-        <a href="#">Next</a>
-    </div>
-
-    <!-- Back to Top Button -->
-    <div id="back-to-top" class="back-to-top"><i class="fas fa-arrow-up"></i></div>
-
-    <footer>
-        <p>&copy; 2024 NxT Machinery. All rights reserved.</p>
-        <p id="date-time">Today's Date: </p>
-        <nav aria-label="Breadcrumb">
-            <ul class="breadcrumb">
-                <li><a href="index.html">Home</a></li>
-                <li>Products</li>
-            </ul>
-        </nav>
-        <div class="social-share">
-            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            updateDateTime();
-
-            // Initialize carousel
-            $('.product-carousel').slick({
-                autoplay: true,
-                autoplaySpeed: 3000,
-                arrows: true,
-                dots: true
-            });
-
-            // Debounced search functionality
-            let searchTimeout;
-            $('#product-search').on('input', function () {
-                clearTimeout(searchTimeout);
-                const query = $(this).val().toLowerCase();
-                searchTimeout = setTimeout(() => {
-                    $('.product').each(function () {
-                        const title = $(this).find('h3').text().toLowerCase();
-                        $(this).toggle(title.includes(query));
-                    });
-                }, 300);
-            });
-
-            // Filter by category
-            $('#category-filter').on('change', function () {
-                const category = $(this).val();
-                $('.product').each(function () {
-                    const productCategory = $(this).data('category');
-                    $(this).toggle(!category || productCategory === category);
-                });
-            });
-
-            // Sort options
-            $('#sort-options').on('change', function () {
-                const sortBy = $(this).val();
-                const products = $('.product
-
-<div class="products" id="products-container">
-    <!-- Existing Products -->
-    <div class="product" data-price="15000" data-category="cnc-lathes">
-        <img src="images/robofil440cc.jpg" alt="Robofil 440CC - 4 Axis Wire EDM" loading="lazy">
-        <div class="rating">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
-        </div>
-        <h3>Robofil 440CC - 4 Axis Wire EDM</h3>
-        <button class="cta-button" data-target="details-Robofil-440CC">View Details</button>
-        <div id="details-Robofil-440CC" class="details-modal hidden">
-            <div class="modal-content" role="dialog" aria-labelledby="modal-title">
-                <span class="close" onclick="closeDetails('Robofil-440CC')">&times;</span>
-                <h3 id="modal-title">Robofil 440CC - 4 Axis Wire EDM Details</h3>
-                <p>Here are the details of the Robofil 440CC - 4 Axis Wire EDM machine...</p>
-                <button class="cta-button contact-button">Inquire about this Machine</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- New Products -->
-    <!-- MAZAK QUICK TURN 300 CNC LATHE -->
-    <div class="product" data-price="23600" data-category="cnc-lathes">
-        <img src="images/mazak_quick_turn_300.jpg" alt="MAZAK QUICK TURN 300 CNC LATHE" loading="lazy">
-        <h3>MAZAK QUICK TURN 300 CNC LATHE</h3>
-        <button class="cta-button" data-target="details-Mazak-Quick-Turn-300">View Details</button>
-        <div id="details-Mazak-Quick-Turn-300" class="details-modal hidden">
-            <div class="modal-content" role="dialog" aria-labelledby="modal-title">
-                <span class="close" onclick="closeDetails('Mazak-Quick-Turn-300')">&times;</span>
-                <h3 id="modal-title">MAZAK QUICK TURN 300 CNC LATHE Details</h3>
-                <p>Max Turning Diameter: 16.1″<br>
-                    Max Turning Length: 39.7″<br>
-                    Max Bar Capacity: 2.75″<br>
-                    Swing Over Bed: 23.64″<br>
-                    Spindle Speed: 30-3300 RPM<br>
-                    Price: $23,600.00</p>
-                <button class="cta-button contact-button">Inquire about this Machine</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- HARDINGE Quest 8/51 Super Precision CNC Lathe -->
-    <div class="product" data-price="45654" data-category="cnc-lathes">
-        <img src="images/hardinge_quest_8_51.jpg" alt="HARDINGE Quest 8/51 Super Precision CNC Lathe" loading="lazy">
-        <h3>HARDINGE Quest 8/51 Super Precision CNC Lathe</h3>
-        <button class="cta-button" data-target="details-Hardinge-Quest-8-51">View Details</button>
-        <div id="details-Hardinge-Quest-8-51" class="details-modal hidden">
-            <div class="modal-content" role="dialog" aria-labelledby="modal-title">
-                <span class="close" onclick="closeDetails('Hardinge-Quest-8-51')">&times;</span>
-                <h3 id="modal-title">HARDINGE Quest 8/51 Super Precision CNC Lathe Details</h3>
-                <p>12 STATION T STYLE TURRET, Air Blast, Parts catcher & Tailstock<br>
-                    High Speed Spindle & Chip conveyor<br>
-                    Fanuc 21iTB CNC Control<br>
-                    Price: $45,654.00</p>
-                <button class="cta-button contact-button">Inquire about this Machine</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Durr Ecoclean Parts Washer Compact 80C -->
-    <div class="product" data-price="14000" data-category="parts-washers">
-        <img src="images/durr_ecoclean_80c.jpg" alt="Durr Ecoclean Parts Washer Compact 80C" loading="lazy">
-        <h3>Durr Ecoclean Parts Washer Compact 80C</h3>
-        <button class="cta-button" data-target="details-Durr-Ecoclean-80C">View Details</button>
-        <div id="details-Durr-Ecoclean-80C" class="details-modal hidden">
-            <div class="modal-content" role="dialog" aria-labelledby="modal-title">
-                <span class="close" onclick="closeDetails('Durr-Ecoclean-80C')">&times;</span>
-                <h3 id="modal-title">Durr Ecoclean Parts Washer Compact 80C Details</h3>
-                <p>Solvent Based Parts Washer<br>
-                    Heating Capacity: 13.25 kW<br>
-                    Cooling Capacity: 5 kW<br>
-                    Filling Capacity: 650L<br>
-                    Price: $14,000.00</p>
-                <button class="cta-button contact-button">Inquire about this Machine</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- HAAS EC-500 4-AXIS CNC HORIZONTAL MACHINING CENTER -->
-    <div class="product" data-price="25000" data-category="machining-centers">
-        <img src="images/haas_ec_500.jpg" alt="HAAS EC-500 4-AXIS CNC HORIZONTAL MACHINING CENTER" loading="lazy">
-        <h3>HAAS EC-500 4-AXIS CNC HORIZONTAL MACHINING CENTER</h3>
-        <button class="cta-button" data-target="details-Haas-EC-500">View Details</button>
-        <div id="details-Haas-EC-500" class="details-modal hidden">
-            <div class="modal-content" role="dialog" aria-labelledby="modal-title">
-                <span class="close" onclick="closeDetails('Haas-EC-500')">&times;</span>
-                <h3 id="modal-title">HAAS EC-500 4-AXIS CNC HORIZONTAL MACHINING CENTER Details</h3>
-                <p>4th Axis Pallet Index<br>
-                    Tool Changer Capacity: 40<br>
-                    Spindle Speed: 12,100 RPM<br>
-                    Pallet Load Capacity: 880 pounds<br>
-                    Price: $25,000.00</p>
-                <button class="cta-button contact-button">Inquire about this Machine</button>
-            </div>
-        </div>
+    <div class="carousel-buttons">
+        <button id="prev">Previous</button>
+        <button id="next">Next</button>
     </div>
 </div>
 
+<div class="machine-description">
+    <h3>Machine Details</h3>
+    <p><strong>Brand:</strong> HAAS</p>
+    <p><strong>Model:</strong> MDC500</p>
+    <p><strong>Year:</strong> 2013</p>
+    <p><strong>Category:</strong> Vertical Machining Center</p>
+    <p><strong>ID:</strong> 11438</p>
+    <p><strong>Seller Needs:</strong> $45,000</p>
+    <p><strong>Payment:</strong> $1,094/mo</p>
+    <p><strong>Specs:</strong></p>
+    <ul>
+        <li><strong>X Axis Travel:</strong> 20"</li>
+        <li><strong>Y Axis Travel:</strong> 14"</li>
+        <li><strong>Z Axis Travel:</strong> 20"</li>
+        <li><strong>Rapid Rate X Axis:</strong> 1,000 IPM</li>
+        <li><strong>Rapid Rate Y Axis:</strong> 1,000 IPM</li>
+        <li><strong>Rapid Rate Z Axis:</strong> 833 IPM</li>
+        <li><strong>Max Table Load:</strong> 700 LBS</li>
+        <li><strong>Spindle Motor:</strong> 20 HP</li>
+        <li><strong>Spindle Speed:</strong> 10,000 RPM</li>
+        <li><strong>Spindle Taper:</strong> 40</li>
+        <li><strong>Tool Changer:</strong> 24 ATC</li>
+        <li><strong>Table Size:</strong> 20" x 12.75"</li>
+        <li><strong>Dimensions:</strong> 143" x 105" x 113"</li>
+        <li><strong>Weight:</strong> 14,000 LBS</li>
+    </ul>
+    <p><strong>Seller:</strong> MarkP815</p>
+    <p><strong>Location:</strong> USA</p>
+</div>
 
+<div class="carousel">
+    <div class="carousel-images">
+        <img src="1116.jpg" alt="Haas EC-500 Image 1" class="active">
+        <img src="1121..jpg" alt="Haas EC-500 Image 2">
+        <img src="1111.jpg">
+        <img src="1116.jpg" alt="Haas EC-500 Image 4">
+        <img src="1111.jpg">
+    </div>
+    <div class="carousel-buttons">
+        <button id="prev2">Previous</button>
+        <button id="next2">Next</button>
+    </div>
+</div>
+
+<div class="machine-description">
+    <h3>Machine Details</h3>
+    <p><strong>Brand:</strong> HAAS</p>
+    <p><strong>Model:</strong> EC-500</p>
+    <p><strong>Category:</strong> Horizontal Machining Center</p>
+    <p><strong>Overview:</strong> The Haas EC-500 is a horizontal machining center featuring 500 mm twin pallets, high-speed rapids, and powerful machining capabilities. It is engineered for precise and efficient operations.</p>
+    <p><strong>Specs:</strong></p>
+    <ul>
+        <li><strong>X Axis Travel:</strong> 32"</li>
+        <li><strong>Y Axis Travel:</strong> 25"</li>
+        <li><strong>Z Axis Travel:</strong> 28"</li>
+        <li><strong>Pallet Size:</strong> 19.7" x 19.7"</li>
+        <li><strong>Max Weight on Pallet:</strong> 880 lbs</li>
+        <li><strong>Tool Capacity:</strong> 30+1</li>
+        <li><strong>Spindle Speed:</strong> 12,000 RPM</li>
+        <li><strong>Spindle Power:</strong> 30 HP</li>
+        <li><strong>Rapid Traverse Rates:</strong> 1,200 IPM</li>
+        <li><strong>Machine Weight:</strong> 17,500 lbs</li>
+    </ul>
+    <p><strong>Price:</strong> Contact Seller</p>
+</div>
+
+<script>
+    const images = document.querySelectorAll('.carousel-images img');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+    const prevButton2 = document.getElementById('prev2');
+    const nextButton2 = document.getElementById('next2');
+
+    let currentIndex = 0;
+    let currentIndex2 = 0;
+
+    function updateCarousel() {
+        images.forEach((img, index) => {
+            img.classList.toggle('active', index === currentIndex);
+        });
+    }
+
+    function updateCarousel2() {
+        const carousel2Images = document.querySelectorAll('.carousel-images:nth-child(2) img');
+        carousel2Images.forEach((img, index) => {
+            img.classList.toggle('active', index === currentIndex2);
+        });
+    }
+
+    nextButton.addEventListener('click', () => {
+        if (currentIndex
