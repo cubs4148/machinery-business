@@ -1,0 +1,126 @@
+/* ===== ROOT DESIGN SYSTEM ===== */
+:root {
+  --primary: #0f2a44;        /* industrial navy */
+  --secondary: #f4f6f8;      /* light grey */
+  --accent: #ff8c00;         /* machinery orange */
+  --text-dark: #1f2933;
+  --text-light: #ffffff;
+  --border: #d1d5db;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background-color: var(--secondary);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* ===== HEADER ===== */
+header {
+  background: var(--primary);
+  color: var(--text-light);
+  padding: 16px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  margin-left: 24px;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+/* ===== HERO ===== */
+.hero {
+  background: linear-gradient(
+      rgba(15, 42, 68, 0.75),
+      rgba(15, 42, 68, 0.75)
+    ),
+    url('abc.jpg') center / cover no-repeat;
+  color: white;
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: 0 auto 30px;
+  font-size: 18px;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  margin: 8px;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #000;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* ===== CARDS ===== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: white;
+  padding: 24px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #0b1e30;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 80px;
+}
