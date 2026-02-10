@@ -1,478 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NxT Machinery - About Us</title>
-    <style>
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-            color: #343a40;
-            line-height: 1.8;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            padding-top: 60px; /* Adjust according to header height */
-        }
-        header {
-            background-color: #007BFF;
-            color: white;
-            padding: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        header img {
-            height: 40px;
-            margin-left: 20px;
-        }
-        nav {
-            margin-right: 20px;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-            font-weight: bold;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .breadcrumb {
-            padding: 10px;
-            background-color: #e9ecef;
-            font-size: 0.9em;
-            margin-top: 10px;
-        }
-        .breadcrumb a {
-            color: #007BFF;
-            text-decoration: none;
-        }
-        .breadcrumb a:hover {
-            text-decoration: underline;
-        }
-        .hero {
-            background-image: url('abc.jpg');
-            background-size: cover;
-            background-position: center;
-            padding: 80px 20px;
-            text-align: center;
-            color: white;
-            position: relative;
-        }
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7); /* Increase opacity for better contrast */
-        }
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
-        .hero h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-        }
-        .hero p {
-            font-size: 1.5em;
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.5;
-        }
-        .hero .cta-button {
-            margin-top: 30px;
-            padding: 15px 30px;
-            background-color: #0056b3;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 1.2em;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s;
-        }
-        .hero .cta-button:hover {
-            background-color: #003d80;
-        }
-        main {
-            flex: 1;
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .stats-section {
-            display: flex;
-            justify-content: space-around;
-            background-color: #007BFF;
-            color: white;
-            padding: 20px;
-            margin: 40px 0;
-            border-radius: 8px;
-        }
-        .stat {
-            text-align: center;
-        }
-        .stat h3 {
-            font-size: 2em;
-            margin: 0;
-        }
-        .stat p {
-            font-size: 1.2em;
-            margin: 5px 0 0;
-        }
-        h1, h2 {
-            color: #007BFF;
-            text-align: center;
-        }
-        h1 {
-            margin-bottom: 10px;
-        }
-        h1 + p {
-            font-size: 1.2em;
-            color: #555;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        p, ul {
-            margin-bottom: 20px;
-        }
-        .timeline {
-            border-left: 4px solid #007BFF;
-            padding-left: 20px;
-            margin: 40px 0;
-        }
-        .timeline-event {
-            margin-bottom: 20px;
-        }
-        .timeline-event h3 {
-            color: #007BFF;
-            margin-bottom: 5px;
-        }
-        .timeline-event p {
-            color: #555;
-        }
-        .team-section {
-            text-align: center;
-            margin: 40px 0;
-        }
-        .team-section .team-member {
-            display: inline-block;
-            margin: 20px;
-            max-width: 200px;
-        }
-        .team-section img {
-            width: 100%;
-            border-radius: 50%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s;
-        }
-        .team-section img:hover {
-            transform: scale(1.05);
-        }
-        .team-section h3 {
-            margin: 10px 0;
-            font-size: 1.2em;
-        }
-        .team-section p {
-            font-size: 0.9em;
-            color: #555;
-        }
-        .testimonial-slider {
-            max-width: 800px;
-            margin: 40px auto;
-            text-align: center;
-            position: relative;
-        }
-        .testimonial {
-            display: none;
-        }
-        .testimonial.active {
-            display: block;
-        }
-        .faq-section {
-            margin: 40px 0;
-        }
-        .faq {
-            background-color: #ffffff;
-            padding: 15px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .faq h3 {
-            color: #007BFF;
-            cursor: pointer;
-        }
-        .faq-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            padding-top: 10px;
-            color: #555;
-        }
-        .faq-content.show {
-            max-height: 200px; /* Adjust based on content */
-        }
-        footer {
-            text-align: center;
-            padding: 15px;
-            background-color: #343a40;
-            color: #ffffff;
-            width: 100%;
-        }
-        .return-home {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            padding: 12px 25px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 14px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s;
-        }
-        .return-home:hover {
-            background-color: #0056b3;
-        }
-        @media (max-width: 768px) {
-            .return-home {
-                top: 10px;
-                left: 10px;
-                padding: 8px 16px;
-            }
-        }
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            background: #ffffff;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-        .contact-form label {
-            display: block;
-            margin-top: 10px;
-        }
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        .contact-form button {
-            background-color: #007BFF;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .contact-form button:hover {
-            background-color: #0056b3;
-        }
-        .chat-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #007BFF;
-            color: white;
-            padding: 15px;
-            border-radius: 50%;
-            border: none;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .chat-button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About NxT Machinery | Industrial Machinery Experts</title>
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-    <header>
-        <img src="logo.png" alt="NxT Machinery Logo">
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
-    <div class="breadcrumb">
-        <a href="index.html">Home</a> &gt; About Us
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <h1>NxT Machinery</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <h1>About NxT Machinery</h1>
+    <p>
+      Reliable sourcing, inspection, and global export of used CNC and
+      industrial machinery.
+    </p>
+  </section>
+
+  <!-- ===== ABOUT INTRO ===== -->
+  <section class="section">
+    <h2>Who We Are</h2>
+    <p style="max-width:900px; margin:0 auto; text-align:center;">
+      NxT Machinery is a trusted supplier of high-quality second-hand CNC,
+      EDM, and metalworking machines. We help manufacturers worldwide
+      access reliable machinery at competitive prices, without the risk
+      and cost of buying new equipment.
+    </p>
+  </section>
+
+  <!-- ===== FOUNDER MESSAGE ===== -->
+  <section class="section">
+    <div class="machine-description">
+      <h2>Founder’s Message</h2>
+      <p>
+        I’m <strong>Chirag Chaudhari</strong>, founder of NxT Machinery.
+        With years of experience in business analysis, operations, and
+        industrial equipment sourcing, I started NxT Machinery with one
+        clear goal — to make high-quality machinery accessible to growing
+        manufacturers worldwide.
+      </p>
+      <p>
+        We focus on transparency, technical understanding, and long-term
+        relationships. Every machine we deal with is evaluated carefully
+        to ensure it delivers real value to our clients.
+      </p>
     </div>
-    <div class="hero">
-        <div class="hero-content">
-            <h1>Welcome to NxT Machinery</h1>
-            <p>Delivering high-performance, cost-effective machinery solutions to industries worldwide since 1996.</p>
-            <a href="#contact" class="cta-button">Get in Touch</a>
-        </div>
+  </section>
+
+  <!-- ===== WHY US ===== -->
+  <section class="section">
+    <h2>Why Clients Choose Us</h2>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>Verified Machinery</h3>
+        <p>
+          Machines are inspected, documented, and honestly represented
+          before sale.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Export Expertise</h3>
+        <p>
+          We handle packing, logistics, and export documentation for smooth
+          international delivery.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Cost Advantage</h3>
+        <p>
+          Clients save significantly compared to new machinery without
+          compromising performance.
+        </p>
+      </div>
     </div>
-    <a href="index.html" class="return-home">Back to Home Page</a>
-    <main>
-        <div class="stats-section">
-            <div class="stat">
-                <h3>25+</h3>
-                <p>Years of Experience</p>
-            </div>
-            <div class="stat">
-                <h3>1000+</h3>
-                <p>Satisfied Clients</p>
-            </div>
-            <div class="stat">
-                <h3>4</h3>
-                <p>Global Offices</p>
-            </div>
-        </div>
-        <h1>About Us</h1>
-        <p>Empowering industries with reliable and high-performance machinery since 1996.</p>
-        <p>Hello, I'm Chirag Chaudhari, the founder of NxT Machinery. With a background in business analysis and data intelligence, I bring over 20 years of experience in the second-hand machinery industry. My passion for optimizing production processes and providing high-quality equipment has been the foundation of NxT Machinery's growth.</p>
-        
-        <h2>Our Vision</h2>
-        <p>Our vision is to deliver cost-effective solutions to industries worldwide, ensuring the reliability and high performance of all machinery offerings, while supporting our clients in enhancing their operational efficiency and scaling their businesses.</p>
-        
-        <div class="timeline">
-            <div class="timeline-event">
-                <h3>1996 - Company Founded</h3>
-                <p>NxT Machinery was established in Chicago, Illinois, aiming to provide affordable, high-quality industrial machinery.</p>
-            </div>
-            <div class="timeline-event">
-                <h3>2000 - Expansion to South America</h3>
-                <p>Opened an office in Lima, Peru to better serve the growing market in South America.</p>
-            </div>
-            <div class="timeline-event">
-                <h3>2010 - Indian Market Entry</h3>
-                <p>NxT Machinery expanded to New Delhi and Ahmedabad, strengthening our presence in the Asian market.</p>
-            </div>
-        </div>
-        
-        <h2>Key Skills</h2>
-        <ul>
-            <li><span class="skill-icon">✅</span> Expertise in metalworking machinery (CNC machines, EDMs, lathes).</li>
-            <li><span class="skill-icon">✅</span> In-depth knowledge of industrial equipment standards.</li>
-            <li><span class="skill-icon">✅</span> Strong leadership in global trade and customer relationship management.</li>
-        </ul>
-        
-        <h2>About NxT Machinery</h2>
-        <p>Founded in 1996, NxT Machinery is a trusted leader in the second-hand machinery industry. With offices located in:</p>
-        <ul>
-            <li>Chicago, Illinois, USA</li>
-            <li>Lima, Peru</li>
-            <li>New Delhi, India</li>
-            <li>Ahmedabad, Gujarat, India</li>
-        </ul>
-        <p>We serve a diverse global clientele, specializing in high-performance, thoroughly inspected machinery for industries of all sizes.</p>
-        
-        <div class="testimonial-slider">
-            <div class="testimonial active">
-                <blockquote>
-                    "NxT Machinery has been instrumental in helping our business grow by providing reliable, high-quality machinery at affordable prices."<br> - Satisfied Client
-                </blockquote>
-            </div>
-            <div class="testimonial">
-                <blockquote>
-                    "Their customer service and attention to detail are unparalleled. We couldn't be happier with our partnership."<br> - Another Happy Client
-                </blockquote>
-            </div>
-        </div>
-        
-        <h2>Meet the Team</h2>
-        <div class="team-section">
-            <div class="team-member">
-                <img src="Chirag.jpg" alt="Chirag Chaudhari">
-                <h3>Chirag Chaudhari</h3>
-                <p>Founder & CEO</p>
-            </div>
-            <div class="team-member">
-                <img src="Yashvi.JPG" alt="Yashvi Raval">
-                <h3>Yashvi Raval</h3>
-                <p>Head of Operations</p>
-            </div>
-        </div>
-        
-        <h2>Mission Statement</h2>
-        <p>Our mission is to provide affordable, reliable, and high-quality machinery, empowering businesses to innovate and grow.</p>
-        
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-section">
-            <div class="faq">
-                <h3>What types of machinery do you offer?</h3>
-                <div class="faq-content">
-                    <p>We specialize in metalworking machinery, including CNC machines, EDMs, lathes, and more. All machinery is thoroughly inspected to ensure high performance.</p>
-                </div>
-            </div>
-            <div class="faq">
-                <h3>How can I get in touch with NxT Machinery?</h3>
-                <div class="faq-content">
-                    <p>You can reach us through the contact form below, or via phone and email listed in our contact section.</p>
-                </div>
-            </div>
-        </div>
-        
-        <h2>Contact Us</h2>
-        <div id="contact" class="contact-form">
-            <h3>Get in Touch</h3>
-            <form action="#">
-                <label for="name">Your Name</label>
-                <input id="name" type="text" placeholder="Your Name" required>
-                <label for="email">Your Email</label>
-                <input id="email" type="email" placeholder="Your Email" required>
-                <label for="message">Your Message</label>
-                <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-    </main>
-    
-    <footer>
-        <p>&copy; <span id="currentYear"></span> NxT Machinery. All rights reserved.</p>
-        <p>Last updated: <span id="currentDateTime"></span></p>
-        <div>
-            <a href="https://facebook.com" target="_blank">Facebook</a> |
-            <a href="https://twitter.com" target="_blank">Twitter</a> |
-            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-        </div>
-    </footer>
+  </section>
 
-    <button class="chat-button">Chat with Us</button>
+  <!-- ===== GLOBAL REACH ===== -->
+  <section class="section">
+    <h2>Global Presence</h2>
+    <p style="text-align:center;">
+      We source machinery primarily from the United States and supply
+      clients across:
+    </p>
 
-    <script>
-        // Set current year
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    <div class="card-grid">
+      <div class="card">United States</div>
+      <div class="card">India</div>
+      <div class="card">South America</div>
+      <div class="card">Other International Markets</div>
+    </div>
+  </section>
 
-        // Set current date and time
-        document.getElementById('currentDateTime').textContent = new Date().toLocaleString();
+  <!-- ===== MISSION ===== -->
+  <section class="section">
+    <div class="machine-description">
+      <h2>Our Mission</h2>
+      <p>
+        To provide reliable, cost-effective industrial machinery solutions
+        that help manufacturers grow, scale, and compete globally.
+      </p>
+    </div>
+  </section>
 
-        // FAQ Toggle
-        document.querySelectorAll('.faq h3').forEach((faqHeader) => {
-            faqHeader.addEventListener('click', () => {
-                const content = faqHeader.nextElementSibling;
-                content.classList.toggle('show');
-            });
-        });
+  <!-- ===== CTA ===== -->
+  <section class="section" style="text-align:center;">
+    <h2>Let’s Work Together</h2>
+    <p>
+      If you’re looking for a specific machine or planning to upgrade your
+      production, we’re here to help.
+    </p>
+    <a href="contact.html" class="btn btn-primary">Contact Us</a>
+  </section>
 
-        // Testimonial Slider
-        let currentTestimonial = 0;
-        const testimonials = document.querySelectorAll('.testimonial');
-        setInterval(() => {
-            testimonials[currentTestimonial].classList.remove('active');
-            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-            testimonials[currentTestimonial].classList.add('active');
-        }, 5000);
-    </script>
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>&copy; 2024 NxT Machinery. All rights reserved.</p>
+    <p>Used CNC, EDM & Industrial Machinery | USA → India & Global Export</p>
+  </footer>
+
 </body>
 </html>
