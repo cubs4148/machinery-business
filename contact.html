@@ -1,281 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NxT Machinery - Contact Us</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="contact.css">
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <meta property="og:title" content="NxT Machinery - Contact Us">
-    <meta property="og:description" content="Get in touch with NxT Machinery for inquiries, customer support, and more.">
-    <meta property="og:image" content="/assets/images/contact-thumbnail.jpg">
-    <meta property="og:url" content="https://www.NxT Machinery.com/contact">
-    <meta name="twitter:card" content="summary_large_image">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-image: url('/assets/images/abc.jpg');
-            background-size: cover;
-            background-position: center;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        h2 {
-            text-align: center;
-            color: #333;
-        }
-        form {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-gap: 20px;
-        }
-        form label {
-            color: #333;
-            font-weight: bold;
-        }
-        form input,
-        form textarea,
-        form select {
-            width: 100%;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-        .form-full {
-            grid-column: span 2;
-        }
-        .form-error {
-            grid-column: span 2;
-            color: red;
-            text-align: center;
-            display: none;
-        }
-        .privacy-policy {
-            grid-column: span 2;
-            display: flex;
-            align-items: center;
-        }
-        .privacy-policy input {
-            margin-right: 10px;
-        }
-        button[type="submit"] {
-            grid-column: span 2;
-            padding: 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        button[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-        .map-container iframe {
-            width: 100%;
-            height: 300px;
-            border-radius: 10px;
-            border: none;
-        }
-        .contact-info,
-        .social-media-links {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .social-media-links img {
-            width: 32px;
-            height: 32px;
-            margin: 0 10px;
-            transition: transform 0.3s;
-        }
-        .social-media-links img:hover {
-            transform: scale(1.2);
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            margin-top: 40px;
-        }
-        footer a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact NxT Machinery | Get a Quote</title>
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-    <div class="container">
-        <h2>Contact Us</h2>
-        <form action="/submit-contact-form" method="POST">
-            <div class="form-full">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" placeholder="Enter your name" required aria-label="Full Name" autocomplete="name">
-            </div>
 
-            <div class="form-full">
-                <label for="company">Company:</label>
-                <input type="text" id="company" name="company" placeholder="Enter your company name" aria-label="Company Name" autocomplete="organization">
-            </div>
+  <!-- ===== HEADER ===== -->
+  <header>
+    <h1>NxT Machinery</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-            <div>
-                <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" pattern="\+?[0-9]{1,4}?[-.\s]?[0-9]{1,14}" required aria-label="Phone Number" autocomplete="tel">
-            </div>
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <h1>Contact Us</h1>
+    <p>
+      Looking for used CNC, EDM, or industrial machinery?  
+      Send us your requirement and we’ll get back to you.
+    </p>
+  </section>
 
-            <div>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required aria-label="Email Address" autocomplete="email">
-            </div>
+  <!-- ===== CONTACT FORM ===== -->
+  <section class="section">
+    <div class="machine-description">
+      <h2>Request Information / Get a Quote</h2>
 
-            <div class="form-full">
-                <label for="country">Country:</label>
-                <select id="country" name="country" required aria-label="Country">
-                    <option value="">Select your country</option>
-                    <option value="USA">USA</option>
-                    <option value="Canada">Canada</option>
-                    <option value="UK">UK</option>
-                    <option value="Other">Other</option>
-                </select>
-            </div>
+      <form id="contact-form">
+        <label>
+          Full Name
+          <input type="text" id="name" required />
+        </label>
 
-            <div class="form-full">
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" placeholder="Enter your message" rows="5" required aria-label="Message"></textarea>
-            </div>
+        <label>
+          Company Name
+          <input type="text" id="company" />
+        </label>
 
-            <div class="privacy-policy">
-                <input type="checkbox" id="privacy" name="privacy" required aria-labelledby="privacy-policy-label">
-                <label id="privacy-policy-label" for="privacy">I accept the <a href="#">Privacy Policy</a></label>
-            </div>
+        <label>
+          Email Address
+          <input type="email" id="email" required />
+        </label>
 
-            <div class="form-error" id="form-error" aria-live="polite">Please fill out all required fields correctly.</div>
-            <button type="submit" id="submit-button">Submit</button>
-        </form>
+        <label>
+          Phone Number
+          <input type="tel" id="phone" required />
+        </label>
 
-        <div class="map-container">
-            <h3>Our Location</h3>
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.396710930933!2d-87.65679888454314!3d41.998183479212105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd0a3e9df4ad9%3A0xdbb5c42dd177fb3e!2s6301%20N%20Sheridan%20Rd%2C%20Chicago%2C%20IL%2060660%2C%20USA!5e0!3m2!1sen!2sin!4v1701028123456!5m2!1sen!2sin" 
-                allowfullscreen="" 
-                loading="lazy"
-                title="Google Maps Location of NxT Machinery - Our Office Location">
-            </iframe>
-        </div>
+        <label>
+          Country
+          <input type="text" id="country" placeholder="USA / India / Other" />
+        </label>
 
-        <div class="contact-info">
-            <h3>Contact Information</h3>
-            <p><strong>Phone:</strong> 1-800-123-4567</p>
-            <p><strong>Email:</strong> contact@NxT Machinery.com</p>
-        </div>
+        <label>
+          Message
+          <textarea id="message" rows="5" required></textarea>
+        </label>
 
-        <div class="social-media-links">
-            <h3>Connect with Us</h3>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                <img src="/assets/icons/facebook.png" alt="Facebook Icon" loading="lazy">
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                <img src="/assets/icons/twitter.png" alt="Twitter Icon" loading="lazy">
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                <img src="/assets/icons/linkedin.png" alt="LinkedIn Icon" loading="lazy">
-            </a>
-        </div>
+        <button type="submit" class="btn btn-primary">
+          Send Enquiry
+        </button>
+      </form>
     </div>
+  </section>
 
-    <footer>
-        <a href="index.html" class="return-home">Return to Home</a>
-        <p>&copy; 2024 NxT Machinery. All rights reserved.</p>
-        <p id="date-time">Today's Date: </p>
-        <p>6301 N Sheridan Rd, Chicago, IL, 60660</p>
-    </footer>
+  <!-- ===== CONTACT DETAILS ===== -->
+  <section class="section">
+    <div class="card-grid">
+      <div class="card">
+        <h3>Phone</h3>
+        <p>+1 800 123 4567</p>
+      </div>
 
-    <script>
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      <div class="card">
+        <h3>Email</h3>
+        <p>contact@nxtmachinery.com</p>
+      </div>
 
-        function sendEmail(event) {
-            event.preventDefault();
-            const submitButton = document.getElementById('submit-button');
-            submitButton.disabled = true;
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            const privacyChecked = document.getElementById('privacy').checked;
+      <div class="card">
+        <h3>Office Location</h3>
+        <p>
+          6301 N Sheridan Rd<br />
+          Chicago, IL 60660<br />
+          United States
+        </p>
+      </div>
+    </div>
+  </section>
 
-            if (!emailPattern.test(email)) {
-                document.getElementById('form-error').textContent = 'Please enter a valid email address.';
-                document.getElementById('form-error').style.display = 'block';
-                submitButton.disabled = false;
-                return;
-            }
+  <!-- ===== MAP ===== -->
+  <section class="section">
+    <iframe
+      src="https://www.google.com/maps?q=6301%20N%20Sheridan%20Rd%20Chicago%20IL&output=embed"
+      width="100%"
+      height="300"
+      style="border:0;"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </section>
 
-            if (!privacyChecked) {
-                document.getElementById('form-error').textContent = 'Please accept the Privacy Policy.';
-                document.getElementById('form-error').style.display = 'block';
-                submitButton.disabled = false;
-                return;
-            }
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>&copy; 2024 NxT Machinery. All rights reserved.</p>
+    <p>Used CNC, EDM & Industrial Machinery | USA → India & Global Export</p>
+  </footer>
 
-            if (name && phone && email && message) {
-                document.getElementById('form-error').style.display = 'none';
-                alert(`Thank you, ${name}! Your message has been sent.`);
-                submitButton.disabled = false;
-            } else {
-                document.getElementById('form-error').textContent = 'Please fill out all fields before submitting.';
-                document.getElementById('form-error').style.display = 'block';
-                submitButton.disabled = false;
-            }
-        }
+  <!-- ===== SIMPLE FORM SCRIPT ===== -->
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert('Thank you! Your enquiry has been submitted. We will contact you shortly.');
+      this.reset();
+    });
+  </script>
 
-        document.querySelector('form').addEventListener('submit', sendEmail);
-
-        function updateDateTime() {
-            const now = new Date();
-            const userLocale = navigator.language || 'en-US';
-            const dateTime = new Intl.DateTimeFormat(userLocale, {
-                dateStyle: 'full',
-                timeStyle: 'long'
-            }).format(now);
-            document.getElementById('date-time').textContent = `Today's Date: ${dateTime.replace(/[<>]/g, '')}`;
-            requestAnimationFrame(updateDateTime);
-        }
-        updateDateTime();
-    </script>
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "NxT Machinery",
-            "url": "https://www.NxT Machinery.com",
-            "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+1-800-123-4567",
-                "contactType": "Customer Service",
-                "areaServed": "US",
-                "availableLanguage": "English"
-            },
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "6301 N Sheridan Rd",
-                "addressLocality": "Chicago",
-                "addressRegion": "IL",
-                "postalCode": "60660",
-                "addressCountry": "US"
-            }
-        }
-    </script>
 </body>
 </html>
