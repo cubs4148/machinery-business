@@ -1,107 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Machine Image Slider</title>
-    <style>
-        .carousel {
-            position: relative;
-            max-width: 600px;
-            margin: auto;
-            overflow: hidden;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HAAS EC-500 | NxT Machinery</title>
 
-        .carousel-images {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .carousel-images img {
-            max-width: 100%;
-            display: none;
-        }
-
-        .carousel-images img.active {
-            display: block;
-        }
-
-        .carousel-buttons {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-        }
-
-        .carousel-buttons button {
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        .carousel-buttons button:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-
-        .machine-description {
-            text-align: left;
-            margin-top: 15px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            background-color: #f9f9f9;
-            font-family: Arial, sans-serif;
-        }
-    </style>
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
 
-<div class="carousel">
-    <div class="carousel-images">
-        <img src="/mnt/data/1120.jpg" alt="Haas EC-500 Image 1" class="active">
-        <img src="/mnt/data/1121..jpg" alt="Haas EC-500 Image 2">
-        <img src="/mnt/data/1121.jpg" alt="Haas EC-500 Image 3">
-        <img src="/mnt/data/1122.jpg" alt="Haas EC-500 Image 4">
-        <img src="/mnt/data/1123.jpg" alt="Haas EC-500 Image 5">
-    </div>
-    <div class="carousel-buttons">
+  <!-- ===== HEADER ===== -->
+  <header>
+    <h1>NxT Machinery</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ===== PRODUCT HERO ===== -->
+  <section class="hero">
+    <h1>HAAS EC-500</h1>
+    <p>High-performance horizontal machining centre for large-scale production</p>
+    <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+  </section>
+
+  <!-- ===== PRODUCT CAROUSEL ===== -->
+  <section class="section">
+    <div class="carousel">
+      <div class="carousel-images">
+        <img src="1120.jpg" alt="Haas EC-500 Image 1" class="active">
+        <img src="1121.jpg" alt="Haas EC-500 Image 2">
+        <img src="1122.jpg" alt="Haas EC-500 Image 3">
+        <img src="1123.jpg" alt="Haas EC-500 Image 4">
+      </div>
+
+      <div class="carousel-buttons">
         <button id="prev">Previous</button>
         <button id="next">Next</button>
+      </div>
     </div>
-</div>
+  </section>
 
-<div class="machine-description">
-    <h3>Machine Details</h3>
-    <p><strong>Brand:</strong> HAAS</p>
-    <p><strong>Model:</strong> EC-500</p>
-    <p><strong>Starting Price:</strong> US$266,995</p>
-    <p><strong>Description:</strong> Designed for high-volume production and unattended operation for larger parts and tombstones, the EC-500 offers a larger work envelope and bigger pallets than the popular EC-400, while providing the same high performance and features. It features fast rapids, a full 4th-axis rotary system for synchronous motion, and a rear-exit chip conveyor for better chip management.</p>
-    <p><strong>Specifications:</strong></p>
-    <ul>
-        <li>Standard 30+1 tool side-mount tool changer, with options for 50+1 or 100+1</li>
-        <li>Built-in pallet changer with 500 mm pallets</li>
+  <!-- ===== MACHINE DETAILS ===== -->
+  <section class="section">
+    <div class="machine-description">
+      <h2>Machine Details</h2>
+
+      <p><strong>Brand:</strong> HAAS</p>
+      <p><strong>Model:</strong> EC-500</p>
+      <p><strong>Starting Price:</strong> USD 266,995</p>
+
+      <p>
+        <strong>Description:</strong><br>
+        Designed for high-volume production and unattended operation for larger parts and tombstones,
+        the EC-500 offers a larger work envelope and bigger pallets than the EC-400,
+        while maintaining high speed, accuracy, and reliability.
+      </p>
+
+      <h3>Key Specifications</h3>
+      <ul>
+        <li>30+1 side-mount tool changer (50+1 / 100+1 optional)</li>
+        <li>500 mm built-in pallet changer</li>
         <li>Full 4th-axis rotary system</li>
-        <li>Pallets are not interchangeable with the previous generation EC-500</li>
-    </ul>
-    <p><strong>Current Configuration:</strong></p>
-    <ul>
-        <li><strong>Spindles:</strong> 8100-rpm Spindle</li>
-        <li><strong>Tool Changers:</strong> 30+1 Side-Mount Tool Changer</li>
-        <li><strong>Chip & Coolant Management:</strong> Belt-Type Chip Conveyor, 95-Gallon Coolant Tank, Chip Tray Filter Kit</li>
-        <li><strong>Control Features:</strong> Touch Screen, Ethernet Interface, WiFi Connection, CNC Control Cabinet Cooler, Power Surge Protection</li>
-        <li><strong>Additional Features:</strong> Advanced Tool Management, Rigid Tapping, HaasConnect Remote Monitoring</li>
-        <li><strong>Warranty:</strong> 1-Year Standard Warranty</li>
-    </ul>
-</div>
+        <li>Rear-exit chip conveyor for efficient chip management</li>
+      </ul>
 
-<script>
+      <h3>Current Configuration</h3>
+      <ul>
+        <li><strong>Spindle:</strong> 8,100 RPM</li>
+        <li><strong>Tool Changer:</strong> 30+1 Side-Mount</li>
+        <li><strong>Chip & Coolant:</strong> Belt conveyor, 95-gallon coolant tank</li>
+        <li><strong>Control:</strong> Touch screen, Ethernet, Wi-Fi</li>
+        <li><strong>Extras:</strong> Rigid tapping, HaasConnect remote monitoring</li>
+        <li><strong>Warranty:</strong> 1-year standard</li>
+      </ul>
+
+      <a href="contact.html" class="btn btn-primary">Enquire About This Machine</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>&copy; 2024 NxT Machinery. All rights reserved.</p>
+    <p>Used CNC, EDM & Industrial Machinery | USA → India & Global Export</p>
+  </footer>
+
+  <!-- ===== CAROUSEL SCRIPT ===== -->
+  <script>
     const images = document.querySelectorAll('.carousel-images img');
     const prevButton = document.getElementById('prev');
     const nextButton = document.getElementById('next');
@@ -109,21 +99,21 @@
     let currentIndex = 0;
 
     function updateCarousel() {
-        images.forEach((img, index) => {
-            img.classList.toggle('active', index === currentIndex);
-        });
+      images.forEach((img, index) => {
+        img.classList.toggle('active', index === currentIndex);
+      });
     }
 
     nextButton.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % images.length;
-        updateCarousel();
+      currentIndex = (currentIndex + 1) % images.length;
+      updateCarousel();
     });
 
     prevButton.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        updateCarousel();
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      updateCarousel();
     });
-</script>
+  </script>
 
 </body>
 </html>
